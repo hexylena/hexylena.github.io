@@ -13,6 +13,10 @@
 
                         <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
 
+						<div id="toc" class="well col-md-4 col-sm-6">
+							{{ .TableOfContents }}
+						</div>
+
                         <p class="post-meta">
                             {{ with .Params.author }}
                                 By <strong class="post-author">{{ . }}</strong>
