@@ -6,7 +6,6 @@ tags:
 - django
 - tutorials
 title: Django + Haystack
-url: /2016/09/13/django-haystack/
 ---
 
 There is a dearth of good tutorials on Django and Haystack's usage together (at least recent/updated ones). So here's one more! Pull requests are quite welcome on this blog post; I would love for it to stay up to date.
@@ -330,7 +329,7 @@ Quit the server with CONTROL-C.
 
 As you saw in the above terminal output, a development server (python process) is listening on [http://127.0.0.1:8000/](http://127.0.0.1:8000/). We can open that in our browser and see something like this:
 
-<img src="{{BASE_PATH}}/assets/img/django-haystack/init.png" />
+<img src="/assets/img/django-haystack/init.png" />
 
 Take a minute to feel good about your progress. If my tutorial missed something and you got lost along the way, please feel free to file an issue.
 
@@ -490,7 +489,7 @@ Django recently added a password complexity filter so my default password of `p`
 
 If we launch our server again with `python manage.py runserver` we will be able to [login](http://127.0.0.1:8000/admin/) at the admin page and see the Paper model.
 
-![]({{BASE_PATH}}/assets/img/django-haystack/admin.png)
+![](/assets/img/django-haystack/admin.png)
 
 We can click the `+Add` to create a new paper, which we can fill out with dummy information like:
 

@@ -1,0 +1,68 @@
+---
+author:
+    - name: kami-solver
+      url: https://github.com/erasche/kami-solver
+      tags:
+        - personal
+        - d3
+        - graphs
+      description: |
+        Novel, generic solution to State of Play's puzzles in the game
+        "Kami".
+    - name: gologme
+      url: https://github.com/erasche/gologme
+      tags:
+        - personal
+        - statistics
+        - logging
+      description: |
+        Tool and service to log my window titles and key press rates.
+    - name: Galactic Radio Telescope (GRT)
+      url: https://github.com/erasche/galactic-radio-telescope
+      tags:
+          - work
+          - galaxy
+          - logging
+      description: |
+        This is a project to collect metrics from Galaxy servers across
+        the universe, and aggregate the data for statistical analysis.
+    - name: Groene Thee
+      url: https://github.com/erasche/groene-thee
+      tags:
+          - work
+          - gmod
+      description: |
+          AngularJS based read-only (possibly one day read/write) drop-in
+          replacement for Tripal. Groene Thee leverages PostgREST to build an
+          API from Chado automatically, and then exposes this is built into
+          nice, efficient, easily-cacheable templates.
+    - name: videojs-framebyframe
+      url: https://github.com/erasche/videojs-framebyframe
+      tags:
+          - work
+          - javascript
+      description: |
+          VideoJS plugin that adds buttons to step through a video by 1 and 5
+          frames (configurable). It's my most starred repo and I kind of hate
+          it, it only gets stars because it's javascript. Anyone could have
+          written this, it isn't exciting code. Why do y'all like this so much?
+contributor:
+    - name: Galaxy
+      url: https://github.com/galaxyproject/galaxy
+      tags:
+          - work
+          - galaxy
+          - gmod
+      description: |
+          Galaxy is an open, web-based platform for accessible,
+          reproducible, and transparent computational biomedical
+          research.
+    - name: Apollo
+      url: https://github.com/gmod/apollo
+      tags:
+          - work
+          - gmod
+      description: |
+        Genome annotation editor with a Java Server backend and a
+        Javascript client that runs in a web browser as a JBrowse
+        plugin.
