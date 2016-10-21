@@ -33,16 +33,14 @@
 			</div>
 		</a>
     </div>
-		</div>
-        <div>
+	<div>
 		{{ range .Data.Pages  }}
-			{{if eq .Type "index" }} 
-				{{.Content}}
-			{{end}}
+			{{ if eq .Type "index" }}
+				{{ .Content }}
+			{{ end }}
 		{{ end  }}
-			{{ partial "footer.html" . }}
-        </div>
-    </div>
+		{{ partial "footer.html" . }}
+	</div>
 </div>
 </body>
 </html>
