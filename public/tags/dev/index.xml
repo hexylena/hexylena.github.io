@@ -9,6 +9,16 @@
     <atom:link href="https://erasche.github.io/tags/dev/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Notes From Learning GraphQL</title>
+      <link>https://erasche.github.io/post/2016-12-21-graphql/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2016-12-21-graphql/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png&#34;&gt;https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Django &#43; Haystack</title>
       <link>https://erasche.github.io/post/2016-09-13-django-haystack/</link>
       <pubDate>Tue, 13 Sep 2016 00:00:00 +0000</pubDate>

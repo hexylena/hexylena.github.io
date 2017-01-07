@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eric Rasche</title>
+    <link>https://erasche.github.io/tags/personal-notes/index.xml</link>
+    <description>Recent content on Eric Rasche</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://erasche.github.io/tags/personal-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Notes From Learning GraphQL</title>
+      <link>https://erasche.github.io/post/2016-12-21-graphql/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2016-12-21-graphql/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png&#34;&gt;https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

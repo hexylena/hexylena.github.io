@@ -6,8 +6,18 @@
     <description>Recent content on Eric Rasche</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Sep 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Dec 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://erasche.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Notes From Learning GraphQL</title>
+      <link>https://erasche.github.io/post/2016-12-21-graphql/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2016-12-21-graphql/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png&#34;&gt;https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Django &#43; Haystack</title>
@@ -640,12 +650,15 @@ slightly prettier &amp;amp; more succict graphics.&lt;/p&gt;
     </item>
     
     <item>
-      <title></title>
-      <link>https://erasche.github.io/post/2016-12-21-graphql/</link>
+      <title>Drafts</title>
+      <link>https://erasche.github.io/drafts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://erasche.github.io/post/2016-12-21-graphql/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png&#34;&gt;https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png&lt;/a&gt;&lt;/p&gt;
+      <guid>https://erasche.github.io/drafts/</guid>
+      <description>&lt;p&gt;Everything I do is in the open, so why not publish work-in-progress drafts too?
+They&amp;rsquo;re in the &lt;a href=&#34;https://github.com/erasche/erasche.github.io&#34;&gt;public git repo&lt;/a&gt;
+after all. No sense in hiding them from the compiled site just because they
+aren&amp;rsquo;t polished.&lt;/p&gt;
 </description>
     </item>
     

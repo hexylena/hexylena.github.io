@@ -11,7 +11,7 @@
                 <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
                 <section class="post">
                     <header class="post-header">
-
+						{{ if .Draft }}<a href="/drafts/" style="font-size: 2em">[DRAFT]</a> {{ end }}
                         <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
 
 						<div id="toc" class="well col-md-4 col-sm-6">
