@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drafts &middot; Eric Rasche</title>
+    <title>Galaxy Instance Testing &middot; Eric Rasche</title>
 
-    <meta name="description" content="">
+    <meta name="description" content="Short post about tools for testing Galaxy Instances">
 
     <meta name="generator" content="Hugo 0.17" />
     <meta name="twitter:card" content="summary">
@@ -94,25 +94,83 @@
         <div style="padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto;">
             
             <div class="posts">
-                <h1 class="content-subhead">0001-01-01 00:00:00 &#43;0000 UTC</h1>
+                <h1 class="content-subhead">2017-01-07 07:01:33 &#43;0000 UTC</h1>
                 <section class="post">
                     <header class="post-header">
                         
-                        <a href="https://erasche.github.io/drafts/" class="post-title">Drafts</a>
+                        <a href="https://erasche.github.io/post/2017-01-07-galaxy-instance-testing/" class="post-title">Galaxy Instance Testing</a>
                         <div>
+                            
+                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/galaxy">galaxy</a>
+                            
+                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/testing">testing</a>
+                            
+                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/dev">dev</a>
+                            
+                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/work">work</a>
                             
                         </div>
 
                         <div id="toc" class="pure-u-1">
-                            
+                            <nav id="TableOfContents">
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a></li>
+<li><a href="#jenkins-integration">Jenkins Integration</a></li>
+</ul>
+</nav>
                         </div>
                     </header>
 
                     <div class="post-description">
-                        <p>Everything I do is in the open, so why not publish work-in-progress drafts too?
-They&rsquo;re in the <a href="https://github.com/erasche/erasche.github.io">public git repo</a>
-after all. No sense in hiding them from the compiled site just because they
-aren&rsquo;t polished.</p>
+                        
+
+<h1 id="problem">Problem</h1>
+
+<p>I recently found that some of my org&rsquo;s old workflows were not importable
+due to bad practices (changing tool IDs, deprecated tools, etc).</p>
+
+<h1 id="solution">Solution</h1>
+
+<p>Naturally, we threw together a simple tool to verify that all of the
+workflows could safely be imported. Using a test user account, it runs:</p>
+
+<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span style="color: #60a0b0; font-style: italic"># Remove old workflows to ensure test only tests latest version of each</span>
+<span style="color: #60a0b0; font-style: italic"># workflow</span>
+remove_all_workflows()
+<span style="color: #60a0b0; font-style: italic"># Import all public workflows</span>
+<span style="color: #007020; font-weight: bold">for</span> workflow <span style="color: #007020; font-weight: bold">in</span> import_shared_workflows():
+    <span style="color: #60a0b0; font-style: italic"># Try accessing the JSON workflow representation. Bioblend throws an error when </span>
+    <span style="color: #007020; font-weight: bold">try</span>:
+        workflow<span style="color: #666666">.</span>get_json()
+        xunit<span style="color: #666666">.</span>ok()
+    <span style="color: #007020; font-weight: bold">except</span> <span style="color: #007020">Exception</span>:
+        xunit<span style="color: #666666">.</span>fail()
+</pre></div>
+
+
+<h1 id="jenkins-integration">Jenkins Integration</h1>
+
+<p>We added JUnit output for easy Jenkins integration. <a href="https://cpt.tamu.edu/jenkins/job/galaxy-workflow-import-test/"><img src="https://cpt.tamu.edu/jenkins/buildStatus/icon?job=galaxy-workflow-import-test" alt="Build Status" /></a></p>
+
+<div class="pure-g well">
+    <div class="pure-u-1">
+        <div class="l-box well-title">
+            Jenkins Output
+        </div>
+    </div>
+    <div class="pure-u-1" style="text-align:center">
+        <img src="https://erasche.github.io/assets/img/galaxy-testing-jenkins.png" width="100%" style="max-width: 607px"/>
+    </div>
+    <div class="pure-u-1">
+        <div class="l-box">
+            The failed test reuslts include the workflow name which
+            allows you to easily track down the workflows which failed
+            to import correctly. With Jenkins you can track failures
+            over time, and send alerts when failures occur.
+        </div>
+    </div>
+</div>
 
                     </div>
                 </section>

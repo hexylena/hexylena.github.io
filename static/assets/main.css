@@ -13,6 +13,16 @@
 	font-size: 1.17em;
 }
 
+a.pure-button {
+	text-decoration: none
+}
+
+a.pure-button:hover {
+	background-image: none;
+	background: #c7c7c7;
+
+}
+
 .l-box {
 	padding: 1em;
 }

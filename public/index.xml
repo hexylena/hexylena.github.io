@@ -6,8 +6,65 @@
     <description>Recent content on Eric Rasche</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Jan 2017 07:01:33 +0000</lastBuildDate>
     <atom:link href="https://erasche.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Galaxy Instance Testing</title>
+      <link>https://erasche.github.io/post/2017-01-07-galaxy-instance-testing/</link>
+      <pubDate>Sat, 07 Jan 2017 07:01:33 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2017-01-07-galaxy-instance-testing/</guid>
+      <description>
+
+&lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;
+
+&lt;p&gt;I recently found that some of my org&amp;rsquo;s old workflows were not importable
+due to bad practices (changing tool IDs, deprecated tools, etc).&lt;/p&gt;
+
+&lt;h1 id=&#34;solution&#34;&gt;Solution&lt;/h1&gt;
+
+&lt;p&gt;Naturally, we threw together a simple tool to verify that all of the
+workflows could safely be imported. Using a test user account, it runs:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Remove old workflows to ensure test only tests latest version of each&lt;/span&gt;
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# workflow&lt;/span&gt;
+remove_all_workflows()
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Import all public workflows&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; workflow &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; import_shared_workflows():
+    &lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Try accessing the JSON workflow representation. Bioblend throws an error when &lt;/span&gt;
+    &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;try&lt;/span&gt;:
+        workflow&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;get_json()
+        xunit&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;ok()
+    &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Exception&lt;/span&gt;:
+        xunit&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;fail()
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1 id=&#34;jenkins-integration&#34;&gt;Jenkins Integration&lt;/h1&gt;
+
+&lt;p&gt;We added JUnit output for easy Jenkins integration. &lt;a href=&#34;https://cpt.tamu.edu/jenkins/job/galaxy-workflow-import-test/&#34;&gt;&lt;img src=&#34;https://cpt.tamu.edu/jenkins/buildStatus/icon?job=galaxy-workflow-import-test&#34; alt=&#34;Build Status&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;pure-g well&#34;&gt;
+    &lt;div class=&#34;pure-u-1&#34;&gt;
+        &lt;div class=&#34;l-box well-title&#34;&gt;
+            Jenkins Output
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;pure-u-1&#34; style=&#34;text-align:center&#34;&gt;
+        &lt;img src=&#34;https://erasche.github.io/assets/img/galaxy-testing-jenkins.png&#34; width=&#34;100%&#34; style=&#34;max-width: 607px&#34;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;pure-u-1&#34;&gt;
+        &lt;div class=&#34;l-box&#34;&gt;
+            The failed test reuslts include the workflow name which
+            allows you to easily track down the workflows which failed
+            to import correctly. With Jenkins you can track failures
+            over time, and send alerts when failures occur.
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Notes From Learning GraphQL</title>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Notes &middot; Eric Rasche</title>
+    <title>Work &middot; Eric Rasche</title>
 
     <meta name="description" content="">
 
@@ -96,13 +96,15 @@
 			<div class="posts">
 				
 					<h3>
-						<a href="https://erasche.github.io/drafts/" style="font-size: 2em">[DRAFT]</a> 
-						<a href="https://erasche.github.io/post/2016-12-21-graphql/" class="post-title">Notes From Learning GraphQL</a>
+						
+						<a href="https://erasche.github.io/post/2017-01-07-galaxy-instance-testing/" class="post-title">Galaxy Instance Testing</a>
 					</h3>
-						https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png...
+						Problem I recently found that some of my org&rsquo;s old workflows were not importable due to bad practices (changing tool IDs, deprecated tools, etc).
+Solution Naturally, we threw together a simple tool to verify that all of the workflows could safely be imported. Using a test user account, it runs:
+# Remove old workflows to ensure test only tests latest version of each # workflow remove_all_workflows() # Import all public workflows for workflow in import_shared_workflows(): # Try accessing the JSON workflow representation....
 						<div class="pure-u-1">
 							<div class="l-box postmeta">
-								Published 2016-12-21 | 1 Words | Approx 1 minutes
+								Published 2017-01-07 | 141 Words | Approx 1 minutes
 							</div>
 						</div>
 				
