@@ -13,6 +13,12 @@
                     <header class="post-header">
                         {{ if .Draft }}<a href="/drafts/" style="font-size: 2em">[DRAFT]</a> {{ end }}
                         <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+						{{ if isset .Params "repo" }}
+                        <a href="https://github.com/{{ index .Params "repo" }}" style="text-decoration: none">
+                            <img src="https://img.shields.io/badge/repo-{{ replace (replace (index .Params "repo") "/" "/") "-" "_" }}-green.svg?style=flat-square">
+                            <img src="https://img.shields.io/github/license/{{ index .Params "repo" }}.svg?style=flat-square">
+                        </a>
+						{{ end }}
                         <div>
                             {{ range .Params.tags }}
                             <a class="pure-button button-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
@@ -23,7 +29,6 @@
                             {{ .TableOfContents }}
                         </div>
                     </header>
-
                     <div class="post-description">
                         {{ .Content }}
                     </div>

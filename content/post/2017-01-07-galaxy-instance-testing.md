@@ -7,7 +7,6 @@ Tags:
 - work
 date: 2017-01-07T07:01:33Z
 title: Galaxy Instance Testing
-type: software-release
 repo: TAMU-CPT/galaxy-workflow-import-tester
 ---
 
