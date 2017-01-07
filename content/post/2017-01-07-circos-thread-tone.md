@@ -80,11 +80,21 @@ $ xdg-open circos/circos.png
 			Light Plot
 		</div>
 	</div>
-	<div class="pure-u-1">
-		<img src="/assets/img/circos-thread/circos.png" width="45%" />
-		<img src="/assets/img/circos-thread/circos-dark.png" width="45%" />
-		<img src="/assets/img/circos-thread/root.png" width="45%" />
-		<img src="/assets/img/circos-thread/author.png" width="45%" />
+	<div class="pure-g">
+		<div class="pure-u-1-2">
+			<img src="/assets/img/circos-thread/circos.png" width="100%"/>
+		</div>
+		<div class="pure-u-1-2">
+			<img src="/assets/img/circos-thread/circos-dark.png" width="100%" />
+		</div>
+	</div>
+	<div class="pure-g">
+		<div class="pure-u-1-2">
+			<img src="/assets/img/circos-thread/root.png" width="100%" />
+		</div>
+		<div class="pure-u-1-2">
+			<img src="/assets/img/circos-thread/author.png" width="100%" />
+		</div>
 	</div>
 </div>
 
