@@ -1,8 +1,8 @@
 +++
 title = "Home"
 type = "index"
-description = "Eric Rasche is a Systems Administrator and Programmer for the Center for Phage Technology"
-keywords = "Rasche, devops, administration, bioinformatics, galaxy"
+description = "Systems Administrator and Programmer for the Center for Phage Technology"
+keywords = "devops, administration, bioinformatics, galaxy"
 +++
 
 # About me
