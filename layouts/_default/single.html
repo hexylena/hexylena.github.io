@@ -11,26 +11,24 @@
                 <h1 class="content-subhead">{{ .Date }}</h1>
                 <section class="post">
                     <header class="post-header">
-                        <div class="pure-g">
-                            {{ if isset .Params "repo" }}
-                                <div class="pure-u-2-3">
-                                    {{ if .Draft }}<a href="/drafts/" style="font-size: 2em">[DRAFT]</a> {{ end }}
-                                    <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
-                                </div>
-                                <div class="pure-u-1-3" style="text-align: right">
-                                    <a href="https://github.com/{{ index .Params "repo" }}" style="text-decoration: none">
-                                        <img src="https://img.shields.io/badge/repo-{{ replace (replace (index .Params "repo") "/" "/") "-" "_" }}-green.svg?style=flat-square">
-                                        <br />
-                                        <img src="https://img.shields.io/github/license/{{ index .Params "repo" }}.svg?style=flat-square">
-                                    </a>
-                                </div>
-                            {{ else }}
-                                <div class="pure-u-1">
-                                    {{ if .Draft }}<a href="/drafts/" style="font-size: 2em">[DRAFT]</a> {{ end }}
-                                    <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
-                                </div>
-                            {{ end }}
+
+                        <div>
+                            {{ if .Draft }}<a href="/drafts/" style="font-size: 2em">[DRAFT]</a> {{ end }}
+                            <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
                         </div>
+                        {{ if isset .Params "repo" }}
+                        <div>
+                            <a href="https://github.com/{{ index .Params "repo" }}" style="text-decoration: none">
+                                <img src="https://img.shields.io/badge/repo-{{ replace (replace (index .Params "repo") "/" "/") "-" "_" }}-green.svg?style=flat-square">
+                            </a>
+                            <a href="https://github.com/{{ index .Params "repo" }}" style="text-decoration: none">
+                                <img src="https://img.shields.io/github/license/{{ index .Params "repo" }}.svg?style=flat-square">
+                            </a>
+                        </div>
+                        {{ end }}
+
+
+
                         <div>
                             {{ range .Params.tags }}
                             <a class="pure-button button-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
