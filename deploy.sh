@@ -18,4 +18,4 @@ git commit -m "$msg"
 # Push source and build repos.
 git push origin content
 # http://stackoverflow.com/questions/32616844/git-how-to-push-a-subdirectory-to-a-separate-branch-of-the-same-repository
-git subtree split --branch deploy --prefix dist/
+git subtree split --branch master --prefix public/
