@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eric Rasche</title>
+    <link>https://erasche.github.io/tags/art/index.xml</link>
+    <description>Recent content on Eric Rasche</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://erasche.github.io/tags/art/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Circos ThreadTone</title>
+      <link>https://erasche.github.io/post/2017-01-07-circos-thread-tone/</link>
+      <pubDate>Sat, 07 Jan 2017 11:25:17 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2017-01-07-circos-thread-tone/</guid>
+      <description>
+
+&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
+
+&lt;p&gt;Found
+&lt;a href=&#34;https://github.com/theveloped/ThreadTone&#34;&gt;ThreadTone&lt;/a&gt;
+a while back. Converting it work
+output circos-compatible
+configuration was pretty trivial&lt;/p&gt;
+
+&lt;p&gt;Only notable difficulty was that &lt;code&gt;bezier_radius&lt;/code&gt; was set, and it was not clear how that was propagated. So direct experimentation was used to identify reasonable values.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;colors&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;&amp;lt;include&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;etc/colors.conf&lt;/span&gt;&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;/colors&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;fonts&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;&amp;lt;include&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;etc/fonts.conf&lt;/span&gt;&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;/fonts&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;&amp;lt;include&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;etc/housekeeping.conf&lt;/span&gt;&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;&amp;lt;include&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;ideogram.conf&lt;/span&gt;&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;&amp;lt;include&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;ticks.conf&lt;/span&gt;&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Use a human karyotype for fun&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;karyotype&lt;/span&gt; = data/human.txt
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;image&amp;gt;&lt;/span&gt;
+	&lt;span style=&#34;color: #007020&#34;&gt;dir&lt;/span&gt;          = &lt;span style=&#34;color: #c65d09&#34;&gt;/input/&lt;/span&gt;
+	&lt;span style=&#34;color: #007020&#34;&gt;file&lt;/span&gt;         = circos.png
+	&lt;span style=&#34;color: #007020&#34;&gt;radius&lt;/span&gt;       = &lt;span style=&#34;color: #40a070&#34;&gt;1500&lt;/span&gt;p
+	&lt;span style=&#34;color: #007020&#34;&gt;background&lt;/span&gt;   = white
+	&lt;span style=&#34;color: #007020&#34;&gt;angle_offset&lt;/span&gt; = &lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;/image&amp;gt;&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Reduce this to 10 for nicer tick spacing&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;chromosomes_units&lt;/span&gt; = &lt;span style=&#34;color: #40a070&#34;&gt;10&lt;/span&gt;
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# We just use chr1 in the plot&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;chromosomes&lt;/span&gt;       = hs1
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# A custom link colour is defined in order to take advantage of opacity&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;colors&amp;gt;&lt;/span&gt;
+	&lt;span style=&#34;color: #007020&#34;&gt;customcolor&lt;/span&gt; = &lt;span style=&#34;color: #40a070&#34;&gt;60&lt;/span&gt;,60,60,0.6
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;/colors&amp;gt;&lt;/span&gt;
+
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;links&amp;gt;&lt;/span&gt;
+	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# For some reason, 1r was not a desierable value.&lt;/span&gt;
+	&lt;span style=&#34;color: #007020&#34;&gt;radius&lt;/span&gt;        = &lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;.99r
+	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Increasing this to 1 will change when the bend happens, and as a&lt;/span&gt;
+	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# result make the image smaller.&lt;/span&gt;
+	&lt;span style=&#34;color: #007020&#34;&gt;crest&lt;/span&gt;         = &lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;
+
+	&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;link&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;segdup&lt;/span&gt;&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span style=&#34;color: #007020&#34;&gt;show&lt;/span&gt;         = yes
+		&lt;span style=&#34;color: #007020&#34;&gt;color&lt;/span&gt;        = customcolor
+		&lt;span style=&#34;color: #007020&#34;&gt;thickness&lt;/span&gt;    = &lt;span style=&#34;color: #40a070&#34;&gt;3&lt;/span&gt;p
+		&lt;span style=&#34;color: #007020&#34;&gt;file&lt;/span&gt;         = data/links.txt
+	&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;/link&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #062873; font-weight: bold&#34;&gt;&amp;lt;/links&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1 id=&#34;running&#34;&gt;Running&lt;/h1&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #c65d09; font-weight: bold&#34;&gt;$&lt;/span&gt; make light
+&lt;span style=&#34;color: #c65d09; font-weight: bold&#34;&gt;$&lt;/span&gt; xdg-open circos/circos.png
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;div class=&#34;pure-g well&#34;&gt;
+    &lt;div class=&#34;pure-u-1&#34;&gt;
+        &lt;div class=&#34;l-box well-title&#34;&gt;
+            Light Plot
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;pure-u-1&#34;&gt;
+        &lt;img src=&#34;https://erasche.github.io/assets/img/circos-thread/circos.png&#34; width=&#34;45%&#34; /&gt;
+        &lt;img src=&#34;https://erasche.github.io/assets/img/circos-thread/circos-dark.png&#34; width=&#34;45%&#34; /&gt;
+        &lt;img src=&#34;https://erasche.github.io/assets/img/circos-thread/root.png&#34; width=&#34;45%&#34; /&gt;
+        &lt;img src=&#34;https://erasche.github.io/assets/img/circos-thread/author.png&#34; width=&#34;45%&#34; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

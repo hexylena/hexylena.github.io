@@ -36,7 +36,6 @@ This tutorial assumes you are on Linux or OSX, as we'll be running a few command
 First things first! We need to make a folder for our new project which we'll be calling `Paper-Search`:
 
 ```console
-# TODO: come up with a better name ;)
 [hxr@leda:~/]$ mkdir paper-search # Create a directory for the project. You might not want to create yours in your home directory, but instead wherever you keep your programming projects
 [hxr@leda:~/]$ cd paper-search # change into that directory once you've created it
 [hxr@leda:~/paper-search]$

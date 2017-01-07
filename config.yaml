@@ -10,4 +10,5 @@ canonifyurls: true
 params:
     twitterName: "Eric_Rasche"
     githubName: "erasche"
+    picture: /assets/pics/me3.png
 ...

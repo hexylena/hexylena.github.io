@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circos ThreadTone &middot; Eric Rasche</title>
+
+    <meta name="description" content="Converted the thread tone repo to work with circos.">
+
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="twitter:card" content="summary">
+    
+
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+
+    <link rel="stylesheet" href="https://erasche.github.io//css/all.min.css">
+    <link rel="stylesheet" href="https://erasche.github.io//assets/main.css">
+    <link rel="alternate" type="application/rss+xml" title="Eric Rasche" href="https://erasche.github.io//index.xml" />
+</head>
+<body>
+
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+    <div class="header">
+        <hgroup>
+            
+            <img src="https://erasche.github.io/assets/pics/me3.png" width="80%" style="max-width: 240px;">
+            
+            <h1 class="brand-title"><a href="https://erasche.github.io/">Eric Rasche</a></h1>
+            <h2 class="brand-tagline"></h2>
+        </hgroup>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="pure-button" href="https://erasche.github.io//index.xml"><i class="fa fa-rss"></i> RSS</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="pure-button" href="https://twitter.com/Eric_Rasche"><i class="fa fa-twitter"></i> Twitter</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a class="pure-button" href="https://github.com/erasche "><i class="fa fa-github-alt"></i> GitHub</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+    <div class="content pure-u-1 pure-u-md-3-4" style="padding: 0;">
+        <div class="size-chart pure-g">
+	<a class="size-chart-item" href="https://erasche.github.io/" style="width: 20%;background: #1f8dd6; color: white; padding: 1em">
+		<div class="size-chart-base pure-u">
+			<span class="size-chart-label">
+				Home
+			</span>
+		</div>
+	</a>
+	<a class="size-chart-item" href="https://erasche.github.io/post/" style="width: 20%;background: #265778; color: white; padding: 1em">
+		<div class="size-chart-base pure-u">
+			<span class="size-chart-label">
+				Blog
+			</span>
+		</div>
+	</a>
+	<a class="size-chart-item" href="https://erasche.github.io/talks/" style="width: 20%;background: #5eb95e; color: white; padding: 1em">
+		<div class="size-chart-base pure-u">
+			<span class="size-chart-label">
+				Talks
+			</span>
+		</div>
+	</a>
+	<a class="size-chart-item" href="https://erasche.github.io/software/" style="width: 20%;background: #dd514c; color: white; padding: 1em">
+		<div class="size-chart-base pure-u">
+			<span class="size-chart-label">
+				Software
+			</span>
+		</div>
+	</a>
+	<a class="size-chart-item" href="https://erasche.github.io/assets/rasche_cv.pdf" style="width: 20%;background: rgb(243, 123, 29); color: white; padding: 1em">
+		<div class="size-chart-base pure-u">
+			<span class="size-chart-label">
+				Resume
+			</span>
+		</div>
+	</a>
+</div>
+
+        <div style="padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto;">
+            
+            <div class="posts">
+                <h1 class="content-subhead">2017-01-07 11:25:17 &#43;0000 UTC</h1>
+                <section class="post">
+                    <header class="post-header">
+                        
+                        <a href="https://erasche.github.io/post/2017-01-07-circos-thread-tone/" class="post-title">Circos ThreadTone</a>
+						
+                        <a href="https://github.com/erasche/CircosThreadTone" style="text-decoration: none">
+                            <img src="https://img.shields.io/badge/repo-erasche/CircosThreadTone-green.svg?style=flat-square">
+                            <img src="https://img.shields.io/github/license/erasche/CircosThreadTone.svg?style=flat-square">
+                        </a>
+						
+                        <div>
+                            
+                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/dev">dev</a>
+                            
+                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/personal">personal</a>
+                            
+                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/art">art</a>
+                            
+                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/circos">circos</a>
+                            
+                        </div>
+
+                        <div id="toc" class="pure-u-1">
+                            <nav id="TableOfContents">
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#running">Running</a></li>
+</ul>
+</nav>
+                        </div>
+                    </header>
+                    <div class="post-description">
+                        
+
+<h1 id="background">Background</h1>
+
+<p>Found
+<a href="https://github.com/theveloped/ThreadTone">ThreadTone</a>
+a while back. Converting it work
+output circos-compatible
+configuration was pretty trivial</p>
+
+<p>Only notable difficulty was that <code>bezier_radius</code> was set, and it was not clear how that was propagated. So direct experimentation was used to identify reasonable values.</p>
+
+<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span style="color: #062873; font-weight: bold">&lt;colors&gt;</span>
+<span style="color: #062873; font-weight: bold">&lt;&lt;include</span> <span style="color: #4070a0">etc/colors.conf</span><span style="color: #062873; font-weight: bold">&gt;</span><span style="border: 1px solid #FF0000">&gt;</span>
+<span style="color: #062873; font-weight: bold">&lt;/colors&gt;</span>
+<span style="color: #062873; font-weight: bold">&lt;fonts&gt;</span>
+<span style="color: #062873; font-weight: bold">&lt;&lt;include</span> <span style="color: #4070a0">etc/fonts.conf</span><span style="color: #062873; font-weight: bold">&gt;</span><span style="border: 1px solid #FF0000">&gt;</span>
+<span style="color: #062873; font-weight: bold">&lt;/fonts&gt;</span>
+<span style="color: #062873; font-weight: bold">&lt;&lt;include</span> <span style="color: #4070a0">etc/housekeeping.conf</span><span style="color: #062873; font-weight: bold">&gt;</span><span style="border: 1px solid #FF0000">&gt;</span>
+<span style="color: #062873; font-weight: bold">&lt;&lt;include</span> <span style="color: #4070a0">ideogram.conf</span><span style="color: #062873; font-weight: bold">&gt;</span><span style="border: 1px solid #FF0000">&gt;</span>
+<span style="color: #062873; font-weight: bold">&lt;&lt;include</span> <span style="color: #4070a0">ticks.conf</span><span style="color: #062873; font-weight: bold">&gt;</span><span style="border: 1px solid #FF0000">&gt;</span>
+
+<span style="color: #60a0b0; font-style: italic"># Use a human karyotype for fun</span>
+<span style="color: #007020">karyotype</span> = data/human.txt
+<span style="color: #062873; font-weight: bold">&lt;image&gt;</span>
+	<span style="color: #007020">dir</span>          = <span style="color: #c65d09">/input/</span>
+	<span style="color: #007020">file</span>         = circos.png
+	<span style="color: #007020">radius</span>       = <span style="color: #40a070">1500</span>p
+	<span style="color: #007020">background</span>   = white
+	<span style="color: #007020">angle_offset</span> = <span style="color: #40a070">0</span>
+<span style="color: #062873; font-weight: bold">&lt;/image&gt;</span>
+
+<span style="color: #60a0b0; font-style: italic"># Reduce this to 10 for nicer tick spacing</span>
+<span style="color: #007020">chromosomes_units</span> = <span style="color: #40a070">10</span>
+<span style="color: #60a0b0; font-style: italic"># We just use chr1 in the plot</span>
+<span style="color: #007020">chromosomes</span>       = hs1
+
+<span style="color: #60a0b0; font-style: italic"># A custom link colour is defined in order to take advantage of opacity</span>
+<span style="color: #062873; font-weight: bold">&lt;colors&gt;</span>
+	<span style="color: #007020">customcolor</span> = <span style="color: #40a070">60</span>,60,60,0.6
+<span style="color: #062873; font-weight: bold">&lt;/colors&gt;</span>
+
+<span style="color: #062873; font-weight: bold">&lt;links&gt;</span>
+	<span style="color: #60a0b0; font-style: italic"># For some reason, 1r was not a desierable value.</span>
+	<span style="color: #007020">radius</span>        = <span style="color: #40a070">0</span>.99r
+	<span style="color: #60a0b0; font-style: italic"># Increasing this to 1 will change when the bend happens, and as a</span>
+	<span style="color: #60a0b0; font-style: italic"># result make the image smaller.</span>
+	<span style="color: #007020">crest</span>         = <span style="color: #40a070">0</span>
+
+	<span style="color: #062873; font-weight: bold">&lt;link</span> <span style="color: #4070a0">segdup</span><span style="color: #062873; font-weight: bold">&gt;</span>
+		<span style="color: #007020">show</span>         = yes
+		<span style="color: #007020">color</span>        = customcolor
+		<span style="color: #007020">thickness</span>    = <span style="color: #40a070">3</span>p
+		<span style="color: #007020">file</span>         = data/links.txt
+	<span style="color: #062873; font-weight: bold">&lt;/link&gt;</span>
+<span style="color: #062873; font-weight: bold">&lt;/links&gt;</span>
+</pre></div>
+
+
+<h1 id="running">Running</h1>
+
+<p><div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span style="color: #c65d09; font-weight: bold">$</span> make light
+<span style="color: #c65d09; font-weight: bold">$</span> xdg-open circos/circos.png
+</pre></div>
+</p>
+
+<div class="pure-g well">
+    <div class="pure-u-1">
+        <div class="l-box well-title">
+            Light Plot
+        </div>
+    </div>
+    <div class="pure-u-1">
+        <img src="https://erasche.github.io/assets/img/circos-thread/circos.png" width="45%" />
+        <img src="https://erasche.github.io/assets/img/circos-thread/circos-dark.png" width="45%" />
+        <img src="https://erasche.github.io/assets/img/circos-thread/root.png" width="45%" />
+        <img src="https://erasche.github.io/assets/img/circos-thread/author.png" width="45%" />
+    </div>
+</div>
+
+                    </div>
+                </section>
+            </div>
+            <div class="footer well">
+	<div class="pure-menu pure-menu-horizontal pure-menu-open">
+		<ul>
+			<li>
+				This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+			</li>
+			<li>Powered by <a class="hugo" href="https://gohugo.io/" target="_blank">hugo</a></li>
+		</ul>
+	</div>
+</div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

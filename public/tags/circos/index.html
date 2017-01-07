@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galaxy Workflow Plotter &middot; Eric Rasche</title>
+    <title>Circos &middot; Eric Rasche</title>
 
-    <meta name="description" content="Short post (mostly testing the blog) on a d3 experiment I&#39;m working on">
+    <meta name="description" content="">
 
     <meta name="generator" content="Hugo 0.17" />
     <meta name="twitter:card" content="summary">
@@ -23,7 +23,7 @@
 
 
 <div id="layout" class="pure-g">
-    <div class="sidebar pure-u-1 pure-u-md-1-4">
+	<div class="sidebar pure-u-1 pure-u-md-1-4">
     <div class="header">
         <hgroup>
             
@@ -54,8 +54,8 @@
 </div>
 
 
-    <div class="content pure-u-1 pure-u-md-3-4" style="padding: 0;">
-        <div class="size-chart pure-g">
+	<div class="content pure-u-1 pure-u-md-3-4" style="padding: 0;">
+		<div class="size-chart pure-g">
 	<a class="size-chart-item" href="https://erasche.github.io/" style="width: 20%;background: #1f8dd6; color: white; padding: 1em">
 		<div class="size-chart-base pure-u">
 			<span class="size-chart-label">
@@ -93,80 +93,27 @@
 	</a>
 </div>
 
-        <div style="padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto;">
-            
-            <div class="posts">
-                <h1 class="content-subhead">2016-06-21 00:00:00 &#43;0000 UTC</h1>
-                <section class="post">
-                    <header class="post-header">
-                        <a href="https://erasche.github.io/drafts/" style="font-size: 2em">[DRAFT]</a> 
-                        <a href="https://erasche.github.io/post/2016-06-21-gwp/" class="post-title">Galaxy Workflow Plotter</a>
+		<div style="padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto;">
+			
+			<div class="posts">
+				
+					<h3>
 						
-                        <a href="https://github.com/erasche/galaxy-workflow-plotter" style="text-decoration: none">
-                            <img src="https://img.shields.io/badge/repo-erasche/galaxy_workflow_plotter-green.svg?style=flat-square">
-                            <img src="https://img.shields.io/github/license/erasche/galaxy-workflow-plotter.svg?style=flat-square">
-                        </a>
-						
-                        <div>
-                            
-                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/galaxy">galaxy</a>
-                            
-                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/js">js</a>
-                            
-                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/d3">d3</a>
-                            
-                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/dev">dev</a>
-                            
-                            <a class="pure-button button-secondary" href="https://erasche.github.io/tags/learning">learning</a>
-                            
-                        </div>
+						<a href="https://erasche.github.io/post/2017-01-07-circos-thread-tone/" class="post-title">Circos ThreadTone</a>
+					</h3>
+						Background Found ThreadTone a while back. Converting it work output circos-compatible configuration was pretty trivial
+Only notable difficulty was that bezier_radius was set, and it was not clear how that was propagated. So direct experimentation was used to identify reasonable values.
+&lt;colors&gt; &lt;&lt;include etc/colors.conf&gt;&gt; &lt;/colors&gt; &lt;fonts&gt; &lt;&lt;include etc/fonts.conf&gt;&gt; &lt;/fonts&gt; &lt;&lt;include etc/housekeeping.conf&gt;&gt; &lt;&lt;include ideogram.conf&gt;&gt; &lt;&lt;include ticks.conf&gt;&gt; # Use a human karyotype for fun karyotype = data/human.txt &lt;image&gt; dir = /input/ file = circos....
+						<div class="pure-u-1">
+							<div class="l-box postmeta">
+								Published 2017-01-07 | 186 Words | Approx 1 minutes
+							</div>
+						</div>
+				
+			</div>
+			
 
-                        <div id="toc" class="pure-u-1">
-                            <nav id="TableOfContents">
-<ul>
-<li><a href="#design">Design</a></li>
-<li><a href="#functionality">Functionality</a></li>
-<li><a href="#learning">Learning</a></li>
-</ul>
-</nav>
-                        </div>
-                    </header>
-                    <div class="post-description">
-                        
-
-<p>This past week I was frustrated &ldquo;for the last time&rdquo; by having to take multiple
-screenshots and stitch them together to plot a galaxy workflow. I knew I could
-do better&hellip;</p>
-
-<p>Thus, I spent the week working on this mildly useless tool to plot workflows as
-slightly prettier &amp; more succict graphics.</p>
-
-<div class="pure-g well">
-    <div class="pure-u-1">
-        <div class="l-box well-title">
-            Workflow Plotter
-        </div>
-    </div>
-    <div class="pure-u-1">
-        <img src="https://erasche.github.io/assets/img/gwp.png" width="100%" />
-    </div>
-    <div class="pure-u-1">
-        <div class="l-box">
-            Image of the GWP
-        </div>
-    </div>
-</div>
-
-<h1 id="design">Design</h1>
-
-<h1 id="functionality">Functionality</h1>
-
-<h1 id="learning">Learning</h1>
-
-                    </div>
-                </section>
-            </div>
-            <div class="footer well">
+			<div class="footer well">
 	<div class="pure-menu pure-menu-horizontal pure-menu-open">
 		<ul>
 			<li>
@@ -177,8 +124,8 @@ slightly prettier &amp; more succict graphics.</p>
 	</div>
 </div>
 
-        </div>
-    </div>
+		</div>
+	</div>
 </div>
 </body>
 </html>
