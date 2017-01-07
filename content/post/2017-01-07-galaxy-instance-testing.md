@@ -45,7 +45,7 @@ We added JUnit output for easy Jenkins integration. [![Build Status](https://cpt
 		</div>
 	</div>
 	<div class="pure-u-1" style="text-align:center">
-		<img src="/assets/img/galaxy-testing-jenkins.png" width="100%" style="max-width: 607px"/>
+		<img src="/assets/img/galaxy-testing-jenkins.png" width="100%" style="max-width: 602px"/>
 	</div>
 	<div class="pure-u-1">
 		<div class="l-box">
