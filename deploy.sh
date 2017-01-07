@@ -17,4 +17,5 @@ git commit -m "$msg"
 
 # Push source and build repos.
 git push origin content
-git subtree push --prefix=public git@github.com:erasche/erasche.github.io.git master
+# http://stackoverflow.com/questions/32616844/git-how-to-push-a-subdirectory-to-a-separate-branch-of-the-same-repository
+git subtree split --branch deploy --prefix dist/
