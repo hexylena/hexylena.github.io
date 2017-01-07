@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eric Rasche</title>
+    <link>https://erasche.github.io/tags/js/index.xml</link>
+    <description>Recent content on Eric Rasche</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://erasche.github.io/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Galaxy Workflow Plotter</title>
+      <link>https://erasche.github.io/post/2016-06-21-gwp/</link>
+      <pubDate>Tue, 21 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2016-06-21-gwp/</guid>
+      <description>&lt;p&gt;This past week I was frustrated &amp;ldquo;for the last time&amp;rdquo; by having to take multiple
+screenshots and stitch them together to plot a galaxy workflow. I knew I could
+do better&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Thus, I spent the week working on this mildly useless tool to plot workflows as
+slightly prettier &amp;amp; more succict graphics.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://erasche.github.io/assets/img/gwp.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TODO: design, functionality, lessons learnt with webpack&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
