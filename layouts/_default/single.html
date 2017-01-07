@@ -14,6 +14,12 @@
 						{{ if .Draft }}<a href="/drafts/" style="font-size: 2em">[DRAFT]</a> {{ end }}
                         <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
 
+						<div>
+							{{ range .Params.tags }}
+							<a class="pure-button button-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+							{{ end }}
+						</div>
+
 						<div id="toc" class="well col-md-4 col-sm-6">
 							{{ .TableOfContents }}
 						</div>
