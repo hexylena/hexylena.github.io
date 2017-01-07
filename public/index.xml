@@ -636,16 +636,36 @@ class NoteIndex(indexes.SearchIndex, indexes.Indexable):
       <pubDate>Tue, 21 Jun 2016 00:00:00 +0000</pubDate>
       
       <guid>https://erasche.github.io/post/2016-06-21-gwp/</guid>
-      <description>&lt;p&gt;This past week I was frustrated &amp;ldquo;for the last time&amp;rdquo; by having to take multiple
+      <description>
+
+&lt;p&gt;This past week I was frustrated &amp;ldquo;for the last time&amp;rdquo; by having to take multiple
 screenshots and stitch them together to plot a galaxy workflow. I knew I could
 do better&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;Thus, I spent the week working on this mildly useless tool to plot workflows as
 slightly prettier &amp;amp; more succict graphics.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://erasche.github.io/assets/img/gwp.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;pure-g grids-example&#34;&gt;
+    &lt;div class=&#34;pure-u-1&#34;&gt;
+        &lt;div class=&#34;l-box&#34;&gt;
+            &lt;h3&gt;Workflow Plotter&lt;/h3&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;pure-u-1&#34;&gt;
+        &lt;img src=&#34;https://erasche.github.io/assets/img/gwp.png&#34; width=&#34;100%&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;pure-u-1&#34;&gt;
+        &lt;div class=&#34;l-box&#34;&gt;
+            Image of the GWP
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;p&gt;TODO: design, functionality, lessons learnt with webpack&lt;/p&gt;
+&lt;h1 id=&#34;design&#34;&gt;Design&lt;/h1&gt;
+
+&lt;h1 id=&#34;functionality&#34;&gt;Functionality&lt;/h1&gt;
+
+&lt;h1 id=&#34;learning&#34;&gt;Learning&lt;/h1&gt;
 </description>
     </item>
     
@@ -703,43 +723,47 @@ Naturally, I live by this graphic:&lt;/p&gt;
 
 &lt;h2 id=&#34;contact&#34;&gt;Contact&lt;/h2&gt;
 
-&lt;table class=&#34;pure-table&#34;&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Network&lt;/th&gt;
-        &lt;th&gt;Links&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Email&lt;/td&gt;
-        &lt;td&gt;&lt;a href=&#34;mailto:rasche.eric@gmail.com&#34;&gt;rasche.eric@gmail.com&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;GPG ID&lt;/td&gt;
-        &lt;td&gt;
-        &lt;code&gt;0C0E 0EA0 EBB8 E7D1 39B3 4551 149E 5F52 736B 9013&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Twatter&lt;/td&gt;
-        &lt;td&gt;&lt;a href=&#34;https://twitter.com/Eric_Rasche&#34;&gt;@Eric_Rasche&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;XMPP&lt;/td&gt;
-        &lt;td&gt;
-            &lt;a href=&#34;xmpp:rasche.eric@gmail.com&#34;&gt;rasche.eric@gmail.com&lt;/a&gt;
-            &lt;a href=&#34;xmpp:esr@tamu.edu&#34;&gt;esr@tamu.edu&lt;/a&gt;
-        &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;IRC&lt;/td&gt;
-        &lt;td&gt;@erasche on freenode&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Github&lt;/td&gt;
-        &lt;td&gt;&lt;a href=&#34;https://github.com/erasche&#34;&gt;https://github.com/erasche&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Keybase&lt;/td&gt;
-        &lt;td&gt;&lt;a href=&#34;https://keybase.io/hxr&#34;&gt;https://keybase.io/hxr&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
+&lt;table class=&#34;pure-table pure-table-bordered&#34;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Network&lt;/th&gt;
+            &lt;th&gt;Links&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Email&lt;/td&gt;
+            &lt;td&gt;&lt;a href=&#34;mailto:rasche.eric@gmail.com&#34;&gt;rasche.eric@gmail.com&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;GPG ID&lt;/td&gt;
+            &lt;td&gt;
+            &lt;code&gt;0C0E 0EA0 EBB8 E7D1 39B3 4551 149E 5F52 736B 9013&lt;/code&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Twatter&lt;/td&gt;
+            &lt;td&gt;&lt;a href=&#34;https://twitter.com/Eric_Rasche&#34;&gt;@Eric_Rasche&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;XMPP&lt;/td&gt;
+            &lt;td&gt;
+                &lt;a href=&#34;xmpp:rasche.eric@gmail.com&#34;&gt;rasche.eric@gmail.com&lt;/a&gt;
+                &lt;a href=&#34;xmpp:esr@tamu.edu&#34;&gt;esr@tamu.edu&lt;/a&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;IRC&lt;/td&gt;
+            &lt;td&gt;@erasche on freenode&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Github&lt;/td&gt;
+            &lt;td&gt;&lt;a href=&#34;https://github.com/erasche&#34;&gt;https://github.com/erasche&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Keybase&lt;/td&gt;
+            &lt;td&gt;&lt;a href=&#34;https://keybase.io/hxr&#34;&gt;https://keybase.io/hxr&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
 &lt;/table&gt;
 </description>
     </item>
