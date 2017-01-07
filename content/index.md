@@ -39,41 +39,45 @@ I'm an extreme F/OSS advocate; all of my work is F/OSS, and the vast majority of
 ## Contact
 
 
-<table class="pure-table">
-	<tr>
-		<th>Network</th>
-		<th>Links</th>
-	</tr>
-	<tr>
-		<td>Email</td>
-		<td><a href="mailto:rasche.eric@gmail.com">rasche.eric@gmail.com</a></td>
-	</tr>
-	<tr>
-		<td>GPG ID</td>
-		<td>
-		<code>0C0E 0EA0 EBB8 E7D1 39B3 4551 149E 5F52 736B 9013</code></td>
-	</tr>
-	<tr>
-		<td>Twatter</td>
-		<td><a href="https://twitter.com/Eric_Rasche">@Eric_Rasche</a></td>
-	</tr>
-	<tr>
-		<td>XMPP</td>
-		<td>
-			<a href="xmpp:rasche.eric@gmail.com">rasche.eric@gmail.com</a>
-			<a href="xmpp:esr@tamu.edu">esr@tamu.edu</a>
-		</td>
-	</tr>
-	<tr>
-		<td>IRC</td>
-		<td>@erasche on freenode</td>
-	</tr>
-	<tr>
-		<td>Github</td>
-		<td><a href="https://github.com/erasche">https://github.com/erasche</a></td>
-	</tr>
-	<tr>
-		<td>Keybase</td>
-		<td><a href="https://keybase.io/hxr">https://keybase.io/hxr</a></td>
-	</tr>
+<table class="pure-table pure-table-bordered">
+	<thead>
+		<tr>
+			<th>Network</th>
+			<th>Links</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Email</td>
+			<td><a href="mailto:rasche.eric@gmail.com">rasche.eric@gmail.com</a></td>
+		</tr>
+		<tr>
+			<td>GPG ID</td>
+			<td>
+			<code>0C0E 0EA0 EBB8 E7D1 39B3 4551 149E 5F52 736B 9013</code></td>
+		</tr>
+		<tr>
+			<td>Twatter</td>
+			<td><a href="https://twitter.com/Eric_Rasche">@Eric_Rasche</a></td>
+		</tr>
+		<tr>
+			<td>XMPP</td>
+			<td>
+				<a href="xmpp:rasche.eric@gmail.com">rasche.eric@gmail.com</a>
+				<a href="xmpp:esr@tamu.edu">esr@tamu.edu</a>
+			</td>
+		</tr>
+		<tr>
+			<td>IRC</td>
+			<td>@erasche on freenode</td>
+		</tr>
+		<tr>
+			<td>Github</td>
+			<td><a href="https://github.com/erasche">https://github.com/erasche</a></td>
+		</tr>
+		<tr>
+			<td>Keybase</td>
+			<td><a href="https://keybase.io/hxr">https://keybase.io/hxr</a></td>
+		</tr>
+	</tbody>
 </table>
