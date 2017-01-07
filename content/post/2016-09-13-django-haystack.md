@@ -6,6 +6,7 @@ tags:
 - django
 - tutorials
 title: Django + Haystack
+draft: true
 ---
 
 There is a dearth of good tutorials on Django and Haystack's usage together (at least recent/updated ones). So here's one more! Pull requests are quite welcome on this blog post; I would love for it to stay up to date.
@@ -329,7 +330,16 @@ Quit the server with CONTROL-C.
 
 As you saw in the above terminal output, a development server (python process) is listening on [http://127.0.0.1:8000/](http://127.0.0.1:8000/). We can open that in our browser and see something like this:
 
-<img src="/assets/img/django-haystack/init.png" />
+<div class="pure-g well">
+	<div class="pure-u-1">
+		<img src="/assets/img/django-haystack/init.png" />
+	</div>
+	<div class="pure-u-1">
+		<div class="l-box">
+			Success, django is running.
+		</div>
+	</div>
+</div>
 
 Take a minute to feel good about your progress. If my tutorial missed something and you got lost along the way, please feel free to file an issue.
 
@@ -489,7 +499,16 @@ Django recently added a password complexity filter so my default password of `p`
 
 If we launch our server again with `python manage.py runserver` we will be able to [login](http://127.0.0.1:8000/admin/) at the admin page and see the Paper model.
 
-![](/assets/img/django-haystack/admin.png)
+<div class="pure-g well">
+	<div class="pure-u-1">
+		<div class="l-box well-title">
+			Django Administration View
+		</div>
+	</div>
+	<div class="pure-u-1">
+		<img src="/assets/img/django-haystack/admin.png" width="100%" />
+	</div>
+</div>
 
 We can click the `+Add` to create a new paper, which we can fill out with dummy information like:
 

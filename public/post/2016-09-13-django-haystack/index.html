@@ -97,7 +97,7 @@
                 <h1 class="content-subhead">2016-09-13 00:00:00 &#43;0000 UTC</h1>
                 <section class="post">
                     <header class="post-header">
-						
+						<a href="https://erasche.github.io/drafts/" style="font-size: 2em">[DRAFT]</a> 
                         <a href="https://erasche.github.io/post/2016-09-13-django-haystack/" class="post-title">Django &#43; Haystack</a>
 
 						<div>
@@ -452,7 +452,16 @@ Quit the server with CONTROL-C.
 
 <p>As you saw in the above terminal output, a development server (python process) is listening on <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>. We can open that in our browser and see something like this:</p>
 
-<p><img src="https://erasche.github.io/assets/img/django-haystack/init.png" /></p>
+<div class="pure-g well">
+    <div class="pure-u-1">
+        <img src="https://erasche.github.io/assets/img/django-haystack/init.png" />
+    </div>
+    <div class="pure-u-1">
+        <div class="l-box">
+            Success, django is running.
+        </div>
+    </div>
+</div>
 
 <p>Take a minute to feel good about your progress. If my tutorial missed something and you got lost along the way, please feel free to file an issue.</p>
 
@@ -604,7 +613,16 @@ Superuser created successfully.
 
 <p>If we launch our server again with <code>python manage.py runserver</code> we will be able to <a href="http://127.0.0.1:8000/admin/">login</a> at the admin page and see the Paper model.</p>
 
-<p><img src="https://erasche.github.io/assets/img/django-haystack/admin.png" alt="" /></p>
+<div class="pure-g well">
+    <div class="pure-u-1">
+        <div class="l-box well-title">
+            Django Administration View
+        </div>
+    </div>
+    <div class="pure-u-1">
+        <img src="https://erasche.github.io/assets/img/django-haystack/admin.png" width="100%" />
+    </div>
+</div>
 
 <p>We can click the <code>+Add</code> to create a new paper, which we can fill out with dummy information like:</p>
 
