@@ -1,0 +1,30 @@
+---
+talk:
+    - title: Galactic Radio Telescope
+      pdf_url: 'https://github.com/erasche/presentations/blob/master/2016-06_galaxyadmins/talk.pdf'
+      data_url: 'https://github.com/erasche/presentations/tree/master/2016-06_galaxyadmins'
+      meeting_name: Galaxy Admins
+      meeting_url: 'https://wiki.galaxyproject.org/Community/GalaxyAdmins/Meetups/2016_06_16'
+      date: 2016-06-16
+      talk_type: full
+    - title: CPT and Galaxy/Apollo for Phage Annotation
+      pdf_url: 'https://github.com/erasche/presentations/blob/master/2016-psu_visit/main.pdf'
+      data_url: 'https://github.com/erasche/presentations/tree/master/2016-psu_visit'
+      meeting_name: Nekrutenko Group Visit
+      meeting_url: 'http://www.bx.psu.edu/~anton/labSite/'
+      date: 2016-03-18
+      talk_type: full
+    - title: JBrowse
+      pdf_url: 'https://github.com/erasche/presentations/blob/master/2015-GCC/jbrowse/main.pdf'
+      data_url: 'https://github.com/erasche/presentations/tree/master/2015-GCC/jbrowse'
+      meeting_name: GCC2015
+      meeting_url: 'http://gcc2015.tsl.ac.uk/'
+      date: 2015-07-07
+      talk_type: lightning
+    - title: Galaxy Interactive Environments
+      pdf_url: 'https://github.com/erasche/presentations/blob/master/2015-GCC/GIEs/main.pdf'
+      data_url: 'https://github.com/erasche/presentations/tree/master/2015-GCC/GIEs'
+      meeting_name: GCC2015
+      meeting_url: 'http://gcc2015.tsl.ac.uk/'
+      date: 2015-07-07
+      talk_type: full
