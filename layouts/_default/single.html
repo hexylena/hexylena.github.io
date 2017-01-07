@@ -8,7 +8,7 @@
         <div style="padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto;">
             <!-- A wrapper for all the blog posts -->
             <div class="posts">
-                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
+                <h1 class="content-subhead">{{ .Date }}</h1>
                 <section class="post">
                     <header class="post-header">
 						{{ if .Draft }}<a href="/drafts/" style="font-size: 2em">[DRAFT]</a> {{ end }}
@@ -20,20 +20,9 @@
 							{{ end }}
 						</div>
 
-						<div id="toc" class="well col-md-4 col-sm-6">
+						<div id="toc" class="pure-u-1">
 							{{ .TableOfContents }}
 						</div>
-
-                        <p class="post-meta">
-                            {{ with .Params.author }}
-                                By <strong class="post-author">{{ . }}</strong>
-                            {{ end }}
-                            {{ if isset .Params "categories" }}
-                                under
-                                {{ $baseUrl := .Site.BaseURL }}
-                                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
-                            {{ end }}
-                        </p>
                     </header>
                     <div class="post-description">
                         {{ .Content }}
