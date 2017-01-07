@@ -17,4 +17,4 @@ git commit -m "$msg"
 
 # Push source and build repos.
 git push origin content
-git subtree push --prefix=public git@github.com:erasche/erasche.github.io.git master --force
+git subtree push --prefix=public git@github.com:erasche/erasche.github.io.git master
