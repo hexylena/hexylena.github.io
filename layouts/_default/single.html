@@ -13,7 +13,7 @@
                     <header class="post-header">
 
                         <div>
-                            {{ if .Draft }}<a href="/drafts/" style="font-size: 2em">[DRAFT]</a> {{ end }}
+                            {{ if .Draft }}<a href="/drafts/" class="post-title" style="color: #888">[DRAFT]</a> {{ end }}
                             <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
                         </div>
                         {{ if isset .Params "repo" }}
