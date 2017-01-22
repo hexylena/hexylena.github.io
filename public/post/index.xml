@@ -22,6 +22,12 @@
 
 &lt;p&gt;I started this post with the idea of doing fancy controls but&amp;hellip; meh. No time for this, so you just get pretty pictures.&lt;/p&gt;
 
+&lt;div id=&#34;plots-static&#34;&gt;
+    &lt;img src=&#34;https://erasche.github.io/assets/img/bites/a.png&#34; style=&#34;max-width: 100%&#34;&gt;
+    &lt;img src=&#34;https://erasche.github.io/assets/img/bites/b.png&#34; style=&#34;max-width: 100%&#34;&gt;
+    &lt;img src=&#34;https://erasche.github.io/assets/img/bites/c.png&#34; style=&#34;max-width: 100%&#34;&gt;
+&lt;/div&gt;
+
 &lt;div id=&#34;plots&#34;&gt;
 &lt;/div&gt;
 
