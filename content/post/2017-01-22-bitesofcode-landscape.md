@@ -12,6 +12,8 @@ title: Bitesofcode's Terrain Generation
 
 Found [this](https://bitesofcode.wordpress.com/2016/12/23/landscape-generation-using-midpoint-displacement/) blog post and enjoyed the graphics. Re-implementing in JS for a learning exercise.
 
+I started this post with the idea of doing fancy controls but... meh. No time for this, so you just get pretty pictures.
+
 <div id="plots">
 </div>
 

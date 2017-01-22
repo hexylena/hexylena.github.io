@@ -104,36 +104,25 @@ function midpoint_displacement(start, end, roughness, vertical_displacement, num
 points = midpoint_displacement(150, 200, 1.4, 20, 8);
 plot(points);
 
-var q = [
-	{
-		data: points,
-		color: 'red',
-	}
-]
-
-plot_multi(q);
-
-color_dict = {}
-
 plot_multi([
 	{
-		data: midpoint_displacement(450, 220, 0.9, 250, 8),
+		data: midpoint_displacement(450, 420, 0.9, 250, 8),
 		color: color(5),
 	},
 	{
-		data: midpoint_displacement(250, 320, 1.0, 250, 8),
+		data: midpoint_displacement(350, 320, 1.0, 250, 8),
 		color: color(4),
 	},
 	{
-		data: midpoint_displacement(350, 320, 0.9, 250, 8),
+		data: midpoint_displacement(260, 320, 0.9, 250, 8),
 		color: color(3),
 	},
 	{
-		data: midpoint_displacement(270, 190, 1, 120, 9),
+		data: midpoint_displacement(200, 190, 1, 120, 9),
 		color: color(2),
 	},
 	{
-		data: midpoint_displacement(180, 80, 1.2, 30, 12),
+		data: midpoint_displacement(100, 80, 1.2, 30, 12),
 		color: color(1),
 	},
 	{
