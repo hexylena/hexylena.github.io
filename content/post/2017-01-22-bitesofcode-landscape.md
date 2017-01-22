@@ -14,6 +14,12 @@ Found [this](https://bitesofcode.wordpress.com/2016/12/23/landscape-generation-u
 
 I started this post with the idea of doing fancy controls but... meh. No time for this, so you just get pretty pictures.
 
+<div id="plots-static">
+	<img src="/assets/img/bites/a.png" style="max-width: 100%">
+	<img src="/assets/img/bites/b.png" style="max-width: 100%">
+	<img src="/assets/img/bites/c.png" style="max-width: 100%">
+</div>
+
 <div id="plots">
 </div>
 

@@ -1,3 +1,5 @@
+// Hide static versions of plots
+$("#plots-static").css('display', 'none');
 // Adapt to viewport
 var width = $('section.post').width();
 // A 1:2 ratio looks nicer.
