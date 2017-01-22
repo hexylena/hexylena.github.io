@@ -23,6 +23,11 @@ a.pure-button:hover {
 
 }
 
+section.post svg {
+	background-color: #eee;
+	box-shadow: 0 1px 4px -2px #000;
+}
+
 .l-box {
 	padding: 1em;
 }
