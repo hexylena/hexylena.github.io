@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Notes &middot; 3bf57cec3c37</title>
+    <title>Mapgen &middot; 3bf57cec3c37</title>
 
     <meta name="description" content="">
 
@@ -99,13 +99,16 @@
 			<div class="posts">
 				
 					<h3>
-						<a href="https://erasche.github.io/drafts/" style="font-size: 2em">[DRAFT]</a> 
-						<a href="https://erasche.github.io/post/2016-12-21-graphql/" class="post-title">Notes From Learning GraphQL</a>
+						
+						<a href="https://erasche.github.io/post/2017-01-22-bitesofcode-landscape/" class="post-title">Bitesofcode&#39;s Terrain Generation</a>
 					</h3>
-						https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png...
+						Found this blog post and enjoyed the graphics. Re-implementing in JS for a learning exercise.
+I started this post with the idea of doing fancy controls but&hellip; meh. No time for this, so you just get pretty pictures.
+  And here&rsquo;s my code:
+// Adapt to viewport var width = $(&#39;section.post&#39;).width(), height = 500 // Color function borrowed from original post function color(idx){ var colors = [ [195, 157, 224], [158, 98, 204], [130, 79, 138], [68, 28, 99], [49, 7, 82], [23, 3, 38], [240, 203, 163] ]; return &#39;rgb(&#39; + colors[idx][0] + &#39;,&#39; + colors[idx][1] + &#39;,&#39; +colors[idx][2] + &#39;)&#39;; } // Setup the SVG object on the page function _prep_svg(){ var svg = d3....
 						<div class="pure-u-1">
 							<div class="l-box postmeta">
-								Published 2016-12-21 | 1 Words | Approx 1 minutes
+								Published 2017-01-22 | 592 Words | Approx 3 minutes
 							</div>
 						</div>
 				

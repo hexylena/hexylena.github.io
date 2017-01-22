@@ -11,7 +11,6 @@
     <meta name="twitter:card" content="summary">
     
 
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
 
@@ -101,6 +100,31 @@
 				
 					<h3>
 						
+						<a href="https://erasche.github.io/post/2017-01-22-bitesofcode-landscape/" class="post-title">Bitesofcode&#39;s Terrain Generation</a>
+					</h3>
+						Found this blog post and enjoyed the graphics. Re-implementing in JS for a learning exercise.
+I started this post with the idea of doing fancy controls but&hellip; meh. No time for this, so you just get pretty pictures.
+  And here&rsquo;s my code:
+// Adapt to viewport var width = $(&#39;section.post&#39;).width(), height = 500 // Color function borrowed from original post function color(idx){ var colors = [ [195, 157, 224], [158, 98, 204], [130, 79, 138], [68, 28, 99], [49, 7, 82], [23, 3, 38], [240, 203, 163] ]; return &#39;rgb(&#39; + colors[idx][0] + &#39;,&#39; + colors[idx][1] + &#39;,&#39; +colors[idx][2] + &#39;)&#39;; } // Setup the SVG object on the page function _prep_svg(){ var svg = d3....
+						<div class="pure-u-1">
+							<div class="l-box postmeta">
+								Published 2017-01-22 | 592 Words | Approx 3 minutes
+							</div>
+						</div>
+				
+					<h3>
+						<a href="https://erasche.github.io/drafts/" style="font-size: 2em">[DRAFT]</a> 
+						<a href="https://erasche.github.io/post/2017-01-07-redeclipse-map-gen/" class="post-title">RedEclipse Map Generation</a>
+					</h3>
+						var svg = d3.select("#ex1"), radius = 18; // var obj = { position: [100, 50] }; // var circle = cartesian(ref(obj, 'x'), ref(obj, 'y')); /* var obj = {x: 0, y: 0}; var circle = cartesian( Model.ref(obj, 'x') .clamped(0, 19) .rounded() .multiply(30) .add(20), Model.ref(obj, 'y') .clamped(0, 3) .rounded() .multiply(20) .add(20) ); */ var obj2 = {radius: 0, angle: 0}; var radial = polar( Model.ref(obj2, 'radius') .clamped(0, 4) ....
+						<div class="pure-u-1">
+							<div class="l-box postmeta">
+								Published 2017-01-07 | 108 Words | Approx 1 minutes
+							</div>
+						</div>
+				
+					<h3>
+						
 						<a href="https://erasche.github.io/post/2017-01-07-circos-thread-tone/" class="post-title">Circos ThreadTone</a>
 					</h3>
 						Background Found ThreadTone a while back. Converting it work output circos-compatible configuration was pretty trivial
@@ -122,6 +146,19 @@ Solution Naturally, we threw together a simple tool to verify that all of the wo
 						<div class="pure-u-1">
 							<div class="l-box postmeta">
 								Published 2017-01-07 | 141 Words | Approx 1 minutes
+							</div>
+						</div>
+				
+					<h3>
+						
+						<a href="https://erasche.github.io/post/2017-01-07-redblob-controls/" class="post-title">Red Blob Controls</a>
+					</h3>
+						Really, really loved the controls in RedBlob&rsquo;s making of tutorial, ok, let&rsquo;s re-implement those quickly.
+
+var svg = d3.select("#ex1"), radius = 18; // var obj = { position: [100, 50] }; // var circle = cartesian(ref(obj, 'x'), ref(obj, 'y')); /* var obj = {x: 0, y: 0}; var circle = cartesian( Model.ref(obj, 'x') .clamped(0, 19) .rounded() .multiply(30) .add(20), Model.ref(obj, 'y') .clamped(0, 3) .rounded() .multiply(20) .add(20) ); */ var obj2 = {radius: 0, angle: 0}; var radial = polar( Model....
+						<div class="pure-u-1">
+							<div class="l-box postmeta">
+								Published 2017-01-02 | 123 Words | Approx 1 minutes
 							</div>
 						</div>
 				

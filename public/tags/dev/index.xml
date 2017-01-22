@@ -9,6 +9,276 @@
     <atom:link href="https://erasche.github.io/tags/dev/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Bitesofcode&#39;s Terrain Generation</title>
+      <link>https://erasche.github.io/post/2017-01-22-bitesofcode-landscape/</link>
+      <pubDate>Sun, 22 Jan 2017 01:29:05 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2017-01-22-bitesofcode-landscape/</guid>
+      <description>&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js&#34; integrity=&#34;sha256-4mL8TQfOJSbg0f42dQw5cKLl2ngQXUSXqfQnvK11M44=&#34; crossorigin=&#34;anonymous&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js&#34; integrity=&#34;sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=&#34; crossorigin=&#34;anonymous&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Found &lt;a href=&#34;https://bitesofcode.wordpress.com/2016/12/23/landscape-generation-using-midpoint-displacement/&#34;&gt;this&lt;/a&gt; blog post and enjoyed the graphics. Re-implementing in JS for a learning exercise.&lt;/p&gt;
+
+&lt;p&gt;I started this post with the idea of doing fancy controls but&amp;hellip; meh. No time for this, so you just get pretty pictures.&lt;/p&gt;
+
+&lt;div id=&#34;plots&#34;&gt;
+&lt;/div&gt;
+
+&lt;script src=&#34;https://erasche.github.io/js/bitesofcode.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;And here&amp;rsquo;s my code:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Adapt to viewport&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; width &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; $(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;section.post&amp;#39;&lt;/span&gt;).width(),
+	height &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;500&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Color function borrowed from original post&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt; color(idx){
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; colors &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; [
+		[&lt;span style=&#34;color: #40a070&#34;&gt;195&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;157&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;224&lt;/span&gt;],
+		[&lt;span style=&#34;color: #40a070&#34;&gt;158&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;98&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;204&lt;/span&gt;],
+		[&lt;span style=&#34;color: #40a070&#34;&gt;130&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;79&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;138&lt;/span&gt;],
+		[&lt;span style=&#34;color: #40a070&#34;&gt;68&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;28&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;99&lt;/span&gt;],
+		[&lt;span style=&#34;color: #40a070&#34;&gt;49&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;7&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;82&lt;/span&gt;],
+		[&lt;span style=&#34;color: #40a070&#34;&gt;23&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;38&lt;/span&gt;],
+		[&lt;span style=&#34;color: #40a070&#34;&gt;240&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;203&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;163&lt;/span&gt;]
+	];
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;rgb(&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; colors[idx][&lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; colors[idx][&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt;colors[idx][&lt;span style=&#34;color: #40a070&#34;&gt;2&lt;/span&gt;] &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;)&amp;#39;&lt;/span&gt;;
+}
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Setup the SVG object on the page&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt; _prep_svg(){
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; svg &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; d3.select(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;#plots&amp;quot;&lt;/span&gt;).append(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;svg&amp;#39;&lt;/span&gt;)
+		.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;width&amp;quot;&lt;/span&gt;, width)
+		.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;height&amp;quot;&lt;/span&gt;, height);
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; svg;
+}
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Setup various objects needed by all the plot functions&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt; _prep_plot(){
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; x &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; d3.scaleLinear().range([&lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;, width]),
+		y &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; d3.scaleLinear().range([height, &lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;]);
+
+	x.domain([&lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;256&lt;/span&gt;]);
+	y.domain([&lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;, height]);
+
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; area &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; d3.area()
+		.x(&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt;(d) { &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; x(d[&lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;]);  })
+		.y0(height)
+		.y1(&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt;(d) { &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; y(d[&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;]);  });
+
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; [x, y, area];
+}
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Plot a single data series&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt; plot(data){
+	plot_multi([
+		{
+			data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; data,
+			color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;gray&amp;#39;&lt;/span&gt;,
+		}
+	])
+};
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Plot more than one data series&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt; plot_multi(data_arr, svg){
+	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// arr of&lt;/span&gt;
+	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// {data: data, color: color}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Get our components&lt;/span&gt;
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt;(svg &lt;span style=&#34;color: #666666&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;undefined&lt;/span&gt;){
+		svg &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; _prep_svg();
+	}
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; [x, y, area] &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; _prep_plot();
+
+	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// For each {data: data, color: color} in the data_arr, append an SVG path element.&lt;/span&gt;
+	data_arr.forEach(&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt;(d){
+		svg.append(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;path&amp;quot;&lt;/span&gt;)
+			.data([d.data])
+			.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;class&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;area&amp;quot;&lt;/span&gt;)
+			.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;d&amp;quot;&lt;/span&gt;, area)
+			.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;fill&amp;quot;&lt;/span&gt;, d.color);
+	})
+	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Return the SVG in case we want to re-use it.&lt;/span&gt;
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; svg;
+};
+
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt; getRandomArbitrary(min, max) {
+	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random&lt;/span&gt;
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.random() &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt; (max &lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; min) &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; min;
+}
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Midpoint displacement algorithm, completely copied from bitesofcode website.&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt; midpoint_displacement(start, end, roughness, vertical_displacement, num_of_iterations){
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt;(vertical_displacement &lt;span style=&#34;color: #666666&#34;&gt;!==&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;undefined&lt;/span&gt;){
+		vertical_displacement &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; (start &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; end) &lt;span style=&#34;color: #666666&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;2&lt;/span&gt;;
+	}
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt;(num_of_iterations &lt;span style=&#34;color: #666666&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;undefined&lt;/span&gt;){
+		num_of_iterations &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;16&lt;/span&gt;;
+	}
+
+	points &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; [start, end];
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; iteration &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;;
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;while&lt;/span&gt;(iteration &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;=&lt;/span&gt; num_of_iterations) {
+		&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; new_points &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; [];
+		&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt; points.length &lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;; i&lt;span style=&#34;color: #666666&#34;&gt;++&lt;/span&gt;){
+			&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Get the bounding points&lt;/span&gt;
+			&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; left &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; points[i];
+			&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; right &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; points[i &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;];
+			&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Average for new midpoint&lt;/span&gt;
+			&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; midpoint &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; (left &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; right) &lt;span style=&#34;color: #666666&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;2&lt;/span&gt;;
+			&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Apply displacement&lt;/span&gt;
+			midpoint &lt;span style=&#34;color: #666666&#34;&gt;+=&lt;/span&gt; getRandomArbitrary(&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt;vertical_displacement, vertical_displacement);
+			new_points.push(left);
+			new_points.push(midpoint);
+		}
+		&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Include the last &amp;#39;right&amp;#39; since it wasn&amp;#39;t caught before.&lt;/span&gt;
+		new_points.push(points[points.length &lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;]);
+		&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Replace points&lt;/span&gt;
+		points &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; new_points;
+		&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Smooth out vertical displacement&lt;/span&gt;
+		vertical_displacement &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.pow(&lt;span style=&#34;color: #40a070&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt;roughness) &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt; vertical_displacement;
+		iteration&lt;span style=&#34;color: #666666&#34;&gt;++&lt;/span&gt;;
+	}
+
+	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Convert [10, 20, 10] to [[0, 10], [128, 20], [256, 10]]&lt;/span&gt;
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; num_points &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; points.length &lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;;
+	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; points.map(&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt;(x, i){
+		&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; [&lt;span style=&#34;color: #40a070&#34;&gt;256&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt; i &lt;span style=&#34;color: #666666&#34;&gt;/&lt;/span&gt; num_points, x];
+	});
+};
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Try out a test plot&lt;/span&gt;
+points &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;150&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;1.4&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;8&lt;/span&gt;);
+plot(points);
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Now try a more complex one&lt;/span&gt;
+plot_multi([
+	{
+		data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;450&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;420&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;0.9&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;250&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;8&lt;/span&gt;),
+		color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; color(&lt;span style=&#34;color: #40a070&#34;&gt;5&lt;/span&gt;),
+	},
+	{
+		data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;350&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;320&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;1.0&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;250&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;8&lt;/span&gt;),
+		color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; color(&lt;span style=&#34;color: #40a070&#34;&gt;4&lt;/span&gt;),
+	},
+	{
+		data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;260&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;320&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;0.9&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;250&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;8&lt;/span&gt;),
+		color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; color(&lt;span style=&#34;color: #40a070&#34;&gt;3&lt;/span&gt;),
+	},
+	{
+		data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;190&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;120&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;9&lt;/span&gt;),
+		color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; color(&lt;span style=&#34;color: #40a070&#34;&gt;2&lt;/span&gt;),
+	},
+	{
+		data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;80&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;1.2&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;30&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;12&lt;/span&gt;),
+		color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; color(&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;),
+	},
+	{
+		data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;1.4&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;12&lt;/span&gt;),
+		color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; color(&lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;),
+	},
+]);
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// And lastly fully imitate the original.&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; svg &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; _prep_svg();
+
+svg.append(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;rect&amp;quot;&lt;/span&gt;)
+	.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;x&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;)
+	.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;y&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;)
+	.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;width&amp;quot;&lt;/span&gt;, width)
+	.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;height&amp;quot;&lt;/span&gt;, height)
+	.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;fill&amp;quot;&lt;/span&gt;, color(&lt;span style=&#34;color: #40a070&#34;&gt;6&lt;/span&gt;));
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// sun&lt;/span&gt;
+svg.append(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;ellipse&amp;quot;&lt;/span&gt;)
+	.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;cx&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;50&lt;/span&gt;)
+	.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;cy&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;50&lt;/span&gt;)
+	.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;rx&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;25&lt;/span&gt;)
+	.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;ry&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;25&lt;/span&gt;)
+	.attr(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;fill&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;);
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Layers&lt;/span&gt;
+plot_multi([
+	{ data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;350&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;320&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;0.9&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;250&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;8&lt;/span&gt;),    color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; color(&lt;span style=&#34;color: #40a070&#34;&gt;0&lt;/span&gt;)},
+	{ data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;270&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;190&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;120&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;9&lt;/span&gt;),      color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; color(&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;)},
+	{ data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;180&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;80&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;1.2&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;30&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;12&lt;/span&gt;),     color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; color(&lt;span style=&#34;color: #40a070&#34;&gt;2&lt;/span&gt;)},
+	{ data&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; midpoint_displacement(&lt;span style=&#34;color: #40a070&#34;&gt;250&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;1.4&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color: #40a070&#34;&gt;12&lt;/span&gt;),    color&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt; color(&lt;span style=&#34;color: #40a070&#34;&gt;3&lt;/span&gt;)},
+], svg);
+&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>RedEclipse Map Generation</title>
+      <link>https://erasche.github.io/post/2017-01-07-redeclipse-map-gen/</link>
+      <pubDate>Sat, 07 Jan 2017 12:54:53 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2017-01-07-redeclipse-map-gen/</guid>
+      <description>&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js&#34; integrity=&#34;sha256-4mL8TQfOJSbg0f42dQw5cKLl2ngQXUSXqfQnvK11M44=&#34; crossorigin=&#34;anonymous&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://erasche.github.io/js/controls.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;svg id=&#34;ex1&#34; width=&#34;624&#34; height=&#34;200&#34;&gt;&lt;/svg&gt;&lt;/p&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+
+var svg = d3.select(&#34;#ex1&#34;),
+    radius = 18;
+
+// var obj = { position: [100, 50] };
+// var circle = cartesian(ref(obj, &#39;x&#39;), ref(obj, &#39;y&#39;));
+
+/*
+var obj = {x: 0, y: 0};
+var circle = cartesian(
+    Model.ref(obj, &#39;x&#39;)
+       .clamped(0, 19)
+       .rounded()
+       .multiply(30)
+       .add(20),
+    Model.ref(obj, &#39;y&#39;)
+       .clamped(0, 3)
+       .rounded()
+       .multiply(20)
+       .add(20)
+);
+*/
+
+var obj2 = {radius: 0, angle: 0};
+
+var radial = polar(
+    Model.ref(obj2, &#39;radius&#39;)
+        .clamped(0, 4)
+        .rounded()
+        .multiply(15)
+    ,
+    Model.ref(obj2, &#39;angle&#39;)
+        .multiply(1/360)
+        .multiply(5).rounded().multiply(1/5)
+        .multiply(2*Math.PI)
+)
+.offset([100, 100]);
+
+
+svg.selectAll(&#34;circle&#34;)
+  .data([radial])
+  .enter().append(&#34;circle&#34;)
+    .attr(&#34;cx&#34;, function(d) { return d.cx(); })
+    .attr(&#34;cy&#34;, function(d) { return d.cy(); })
+    .attr(&#34;r&#34;, radius)
+    .style(&#34;stroke&#34;, &#34;#000000&#34;)
+    .style(&#34;stroke-width&#34;, &#34;1&#34;)
+    .style(&#34;fill&#34;, &#34;#5eb95e&#34;)
+    .call(d3.drag()
+        .on(&#34;start&#34;, dragstarted)
+        .on(&#34;drag&#34;, dragged)
+        .on(&#34;end&#34;, dragended));
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Circos ThreadTone</title>
       <link>https://erasche.github.io/post/2017-01-07-circos-thread-tone/</link>
       <pubDate>Sat, 07 Jan 2017 11:25:17 +0000</pubDate>
@@ -160,6 +430,76 @@ remove_all_workflows()
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Red Blob Controls</title>
+      <link>https://erasche.github.io/post/2017-01-07-redblob-controls/</link>
+      <pubDate>Mon, 02 Jan 2017 12:54:53 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2017-01-07-redblob-controls/</guid>
+      <description>&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js&#34; integrity=&#34;sha256-4mL8TQfOJSbg0f42dQw5cKLl2ngQXUSXqfQnvK11M44=&#34; crossorigin=&#34;anonymous&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://erasche.github.io/js/controls.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Really, really loved the controls in RedBlob&amp;rsquo;s &lt;a href=&#34;http://www.redblobgames.com/articles/curved-paths/making-of.html&#34;&gt;making of&lt;/a&gt; tutorial, ok, let&amp;rsquo;s re-implement those quickly.&lt;/p&gt;
+
+&lt;p&gt;&lt;svg id=&#34;ex1&#34; width=&#34;624&#34; height=&#34;200&#34;&gt;&lt;/svg&gt;&lt;/p&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+
+var svg = d3.select(&#34;#ex1&#34;),
+    radius = 18;
+
+// var obj = { position: [100, 50] };
+// var circle = cartesian(ref(obj, &#39;x&#39;), ref(obj, &#39;y&#39;));
+
+/*
+var obj = {x: 0, y: 0};
+var circle = cartesian(
+    Model.ref(obj, &#39;x&#39;)
+       .clamped(0, 19)
+       .rounded()
+       .multiply(30)
+       .add(20),
+    Model.ref(obj, &#39;y&#39;)
+       .clamped(0, 3)
+       .rounded()
+       .multiply(20)
+       .add(20)
+);
+*/
+
+var obj2 = {radius: 0, angle: 0};
+
+var radial = polar(
+    Model.ref(obj2, &#39;radius&#39;)
+        .clamped(0, 4)
+        .rounded()
+        .multiply(15)
+    ,
+    Model.ref(obj2, &#39;angle&#39;)
+        .multiply(1/360)
+        .multiply(5).rounded().multiply(1/5)
+        .multiply(2*Math.PI)
+)
+.offset([100, 100]);
+
+
+svg.selectAll(&#34;circle&#34;)
+  .data([radial])
+  .enter().append(&#34;circle&#34;)
+    .attr(&#34;cx&#34;, function(d) { return d.cx(); })
+    .attr(&#34;cy&#34;, function(d) { return d.cy(); })
+    .attr(&#34;r&#34;, radius)
+    .style(&#34;stroke&#34;, &#34;#000000&#34;)
+    .style(&#34;stroke-width&#34;, &#34;1&#34;)
+    .style(&#34;fill&#34;, &#34;#5eb95e&#34;)
+    .call(d3.drag()
+        .on(&#34;start&#34;, dragstarted)
+        .on(&#34;drag&#34;, dragged)
+        .on(&#34;end&#34;, dragended));
+&lt;/script&gt;
 </description>
     </item>
     
