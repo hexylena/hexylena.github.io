@@ -1224,7 +1224,9 @@ interactions. If, by dedicating hours of my time, my coworkers can click a
 single button and go home to their family, I consider my job accomplished.
 Naturally, I live by this graphic:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://imgs.xkcd.com/comics/is_it_worth_the_time.png&#34; width=&#34;571&#34; height=&#34;464&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://xkcd.com/1205/&#34;&gt;
+    &lt;img src=&#34;https://imgs.xkcd.com/comics/is_it_worth_the_time.png&#34; width=&#34;571&#34; style=&#34;max-width: 100%&#34;&gt;
+&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m an extreme F/OSS advocate; all of my work is F/OSS, and the vast majority of my projects are available under GPLv3 or AGPLv3&lt;/p&gt;
 
