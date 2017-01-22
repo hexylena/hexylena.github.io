@@ -112,10 +112,16 @@ function midpoint_displacement(start, end, roughness, vertical_displacement, num
 		iteration++;
 	}
 
-	// Convert [10, 20, 10] to [[0, 10], [128, 20], [256, 10]]
 	var num_points = points.length - 1;
 	return points.map(function(x, i){
-		return [256 * i / num_points, x];
+		return [
+			// Convert [10, 20, 10] to [[0, 10], [128, 20], [256, 10]]
+			256 * i / num_points,
+			// But we also want to re-scale vertically since our height changes
+			// on smaller devices. on small devices height could be ~100.
+			// Everything would be off the page.
+			x * height / 600
+		];
 	});
 };
 
