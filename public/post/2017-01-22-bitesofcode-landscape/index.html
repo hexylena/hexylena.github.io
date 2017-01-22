@@ -250,10 +250,16 @@
 		iteration<span style="color: #666666">++</span>;
 	}
 
-	<span style="color: #60a0b0; font-style: italic">// Convert [10, 20, 10] to [[0, 10], [128, 20], [256, 10]]</span>
 	<span style="color: #007020; font-weight: bold">var</span> num_points <span style="color: #666666">=</span> points.length <span style="color: #666666">-</span> <span style="color: #40a070">1</span>;
 	<span style="color: #007020; font-weight: bold">return</span> points.map(<span style="color: #007020; font-weight: bold">function</span>(x, i){
-		<span style="color: #007020; font-weight: bold">return</span> [<span style="color: #40a070">256</span> <span style="color: #666666">*</span> i <span style="color: #666666">/</span> num_points, x];
+		<span style="color: #007020; font-weight: bold">return</span> [
+			<span style="color: #60a0b0; font-style: italic">// Convert [10, 20, 10] to [[0, 10], [128, 20], [256, 10]]</span>
+			<span style="color: #40a070">256</span> <span style="color: #666666">*</span> i <span style="color: #666666">/</span> num_points,
+			<span style="color: #60a0b0; font-style: italic">// But we also want to re-scale vertically since our height changes</span>
+			<span style="color: #60a0b0; font-style: italic">// on smaller devices. on small devices height could be ~100.</span>
+			<span style="color: #60a0b0; font-style: italic">// Everything would be off the page.</span>
+			x <span style="color: #666666">*</span> height <span style="color: #666666">/</span> <span style="color: #40a070">600</span>
+		];
 	});
 };
 

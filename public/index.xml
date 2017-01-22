@@ -143,10 +143,16 @@
 		iteration&lt;span style=&#34;color: #666666&#34;&gt;++&lt;/span&gt;;
 	}
 
-	&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Convert [10, 20, 10] to [[0, 10], [128, 20], [256, 10]]&lt;/span&gt;
 	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; num_points &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; points.length &lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;;
 	&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; points.map(&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt;(x, i){
-		&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; [&lt;span style=&#34;color: #40a070&#34;&gt;256&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt; i &lt;span style=&#34;color: #666666&#34;&gt;/&lt;/span&gt; num_points, x];
+		&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;return&lt;/span&gt; [
+			&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Convert [10, 20, 10] to [[0, 10], [128, 20], [256, 10]]&lt;/span&gt;
+			&lt;span style=&#34;color: #40a070&#34;&gt;256&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt; i &lt;span style=&#34;color: #666666&#34;&gt;/&lt;/span&gt; num_points,
+			&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// But we also want to re-scale vertically since our height changes&lt;/span&gt;
+			&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// on smaller devices. on small devices height could be ~100.&lt;/span&gt;
+			&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Everything would be off the page.&lt;/span&gt;
+			x &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt; height &lt;span style=&#34;color: #666666&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;600&lt;/span&gt;
+		];
 	});
 };
 
