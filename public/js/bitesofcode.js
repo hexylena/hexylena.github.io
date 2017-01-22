@@ -1,6 +1,7 @@
 // Adapt to viewport
-var width = $('section.post').width(),
-	height = 500
+var width = $('section.post').width();
+// A 1:2 ratio looks nicer.
+var height = width / 2;
 
 // Color function borrowed from original post
 function color(idx){

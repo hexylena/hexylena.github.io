@@ -29,8 +29,9 @@
 &lt;p&gt;And here&amp;rsquo;s my code:&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Adapt to viewport&lt;/span&gt;
-&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; width &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; $(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;section.post&amp;#39;&lt;/span&gt;).width(),
-	height &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;500&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; width &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; $(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;section.post&amp;#39;&lt;/span&gt;).width();
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// A 1:2 ratio looks nicer.&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;var&lt;/span&gt; height &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; width &lt;span style=&#34;color: #666666&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color: #40a070&#34;&gt;2&lt;/span&gt;;
 
 &lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;// Color function borrowed from original post&lt;/span&gt;
 &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;function&lt;/span&gt; color(idx){

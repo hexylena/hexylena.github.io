@@ -137,8 +137,9 @@
 <p>And here&rsquo;s my code:</p>
 
 <div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span style="color: #60a0b0; font-style: italic">// Adapt to viewport</span>
-<span style="color: #007020; font-weight: bold">var</span> width <span style="color: #666666">=</span> $(<span style="color: #4070a0">&#39;section.post&#39;</span>).width(),
-	height <span style="color: #666666">=</span> <span style="color: #40a070">500</span>
+<span style="color: #007020; font-weight: bold">var</span> width <span style="color: #666666">=</span> $(<span style="color: #4070a0">&#39;section.post&#39;</span>).width();
+<span style="color: #60a0b0; font-style: italic">// A 1:2 ratio looks nicer.</span>
+<span style="color: #007020; font-weight: bold">var</span> height <span style="color: #666666">=</span> width <span style="color: #666666">/</span> <span style="color: #40a070">2</span>;
 
 <span style="color: #60a0b0; font-style: italic">// Color function borrowed from original post</span>
 <span style="color: #007020; font-weight: bold">function</span> color(idx){
