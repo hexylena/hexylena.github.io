@@ -9,6 +9,170 @@
     <atom:link href="https://erasche.github.io/tags/mapgen/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Link Collection / Inspiration</title>
+      <link>https://erasche.github.io/post/2017-01-31-links/</link>
+      <pubDate>Tue, 31 Jan 2017 05:09:00 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2017-01-31-links/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.elysianlegends.com/?p=11&#34;&gt;http://blog.elysianlegends.com/?p=11&lt;/a&gt; layout, structure, planning. Started implementing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jongallant/DungeonGenerator&#34;&gt;https://github.com/jongallant/DungeonGenerator&lt;/a&gt; neat picture&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gamedevelopment.tutsplus.com/tutorials/bake-your-own-3d-dungeons-with-procedural-recipes--gamedev-14360&#34;&gt;https://gamedevelopment.tutsplus.com/tutorials/bake-your-own-3d-dungeons-with-procedural-recipes--gamedev-14360&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.gamasutra.com/blogs/AAdonaac/20150903/252889/Procedural_Dungeon_Generation_Algorithm.php&#34;&gt;http://www.gamasutra.com/blogs/AAdonaac/20150903/252889/Procedural_Dungeon_Generation_Algorithm.php&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;great gifs, &amp;ldquo;tinykeep&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/&#34;&gt;https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/&lt;/a&gt; more on same algo&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Relative_neighborhood_graph&#34;&gt;https://en.wikipedia.org/wiki/Relative_neighborhood_graph&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;good for keeping paths between rooms short&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://journal.stuffwithstuff.com/2014/12/21/rooms-and-mazes/&#34;&gt;http://journal.stuffwithstuff.com/2014/12/21/rooms-and-mazes/&lt;/a&gt; 3 maze-y 5 me&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dungeon Generation</title>
+      <link>https://erasche.github.io/post/2017-01-25-dungeon-gen/</link>
+      <pubDate>Wed, 25 Jan 2017 02:07:15 +0000</pubDate>
+      
+      <guid>https://erasche.github.io/post/2017-01-25-dungeon-gen/</guid>
+      <description>&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js&#34; integrity=&#34;sha256-4mL8TQfOJSbg0f42dQw5cKLl2ngQXUSXqfQnvK11M44=&#34; crossorigin=&#34;anonymous&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js&#34; integrity=&#34;sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=&#34; crossorigin=&#34;anonymous&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Found &lt;a href=&#34;http://www.gamasutra.com/blogs/AAdonaac/20150903/252889/Procedural_Dungeon_Generation_Algorithm.php&#34;&gt;this&lt;/a&gt;
+blog post, so we&amp;rsquo;re going to re-implement that in JS as well. This looks very
+promising for building rooms/dungeons for red-eclipse.&lt;/p&gt;
+
+&lt;div id=&#34;plots&#34;&gt;
+&lt;/div&gt;
+
+&lt;script src=&#34;https://erasche.github.io/js/bboxCollide.js&#34;&gt;&lt;/script&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+// Adapt to viewport
+var width = $(&#39;section.post&#39;).width();
+// These plots are mostly a 1:1 ratio.
+var height = width;
+
+var width = 400;
+var height = 400;
+
+// Setup the SVG object on the page
+function _prep_svg(){
+    var svg = d3.select(&#34;#plots&#34;).append(&#39;svg&#39;)
+        .attr(&#34;width&#34;, width)
+        .attr(&#34;height&#34;, height);
+    return svg;
+}
+
+// Setup various objects needed by all the plot functions
+function _prep_plot(){
+
+    return [x, y, area];
+}
+
+function getRandomArbitrary(min, max) {
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+    return Math.random() * (max - min) + min;
+}
+
+function getRandomPointInCircle(radius){
+    var t = 2 * Math.PI * Math.random(),
+        u = Math.random() + Math.random(),
+        r = null;
+
+    if(u &gt; 1){
+        r = 2 - u;
+    } else {
+        r = u;
+    }
+    return [
+        Math.round(radius * r * Math.cos(t)),
+        Math.round(radius * r * Math.sin(t))
+    ];
+}
+
+// And lastly fully imitate the original.
+var svg = _prep_svg();
+
+var rectangles = [];
+
+var x = d3.scaleLinear().range([-width / 2, width/2]),
+    y = d3.scaleLinear().range([-height / 2, height/2]);
+
+
+function rad2deg(rad){
+    return rad * (180 / Math.PI);
+}
+
+
+for(var i = 0; i &lt; 15; i++){
+    var [x, y] = getRandomPointInCircle(128);
+    var w = Math.round(getRandomArbitrary(20, 85));
+    var h = Math.round(getRandomArbitrary(20, 85));
+    var node = {
+        x: x - w / 2,
+        y: y - h / 2,
+        cx: x,
+        cy: y,
+        w: w,
+        h: h,
+        theta: Math.atan2(x, y),
+    };
+    rectangles.push(node);
+}
+
+var main = svg.append(&#39;g&#39;).attr(&#39;transform&#39;, &#39;translate(200, 200)&#39;);
+
+function update(){
+    main.selectAll(&#39;g&#39;)
+    .data(rectangles)
+    .enter()
+        .append(&#39;rect&#39;)
+        .attr(&#34;x&#34;, function(d){ return d.x})
+        .attr(&#34;y&#34;, function(d){ return d.y})
+        .attr(&#34;width&#34;, function(d){ return d.w})
+        .attr(&#34;height&#34;, function(d){ return d.h})
+        .attr(&#34;stroke&#34;, &#34;black&#34;)
+        .attr(&#34;fill&#34;, &#34;red&#34;);
+}
+
+function centerToCentroid(rect){
+    //console.log(rect);
+}
+
+
+function intersect(a, b) {
+    return (
+        a.x &lt;= b.x + b.width &amp;&amp;
+        b.x &lt;= a.x + a.width &amp;&amp;
+        a.y &lt;= b.y + b.height &amp;&amp;
+        b.y &lt;= a.y + a.height
+    )
+}
+
+function tick(){
+    for(var i = 0; i &lt; rectangles.length; i++){
+        rectangles[i].x += 10;
+        //for(var j = 0; j &lt; rectangles.length; j++){
+        //  console.log(intersect(rectangles[i], rectangles[j]))
+        //}
+    }
+}
+tick();
+update();
+
+
+
+
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Bitesofcode&#39;s Terrain Generation</title>
       <link>https://erasche.github.io/post/2017-01-22-bitesofcode-landscape/</link>
       <pubDate>Sun, 22 Jan 2017 01:29:05 +0000</pubDate>

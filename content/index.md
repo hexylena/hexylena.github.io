@@ -28,7 +28,7 @@ single button and go home to their family, I consider my job accomplished.
 Naturally, I live by this graphic:
 
 <a href="https://xkcd.com/1205/">
-	<img src="https://imgs.xkcd.com/comics/is_it_worth_the_time.png" width="571" style="max-width: 100%">
+	<img src="https://imgs.xkcd.com/comics/is_it_worth_the_time.png" width="571" style="max-width: 100%" alt="XKCD Comic 1205 showing a chart of how much time is saved for a given task, depending on how often you repeat it.">
 </a>
 
 I'm an extreme F/OSS advocate; all of my work is F/OSS, and the vast majority of my projects are available under GPLv3 or AGPLv3

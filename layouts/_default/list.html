@@ -7,20 +7,20 @@
 		{{ partial "links.html" . }}
 		<div style="padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto;">
 			<!-- A wrapper for all the blog posts -->
-			<div class="posts">
 				{{ range .Paginator.Pages }}
-					<h3>
-						{{ if .Draft  }}<a href="/drafts/" class="post-title" style="color: #888">[DRAFT]</a> {{ end }}
-						<a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
-					</h3>
-						{{ .Summary }}...
+					<div class="post-title">
+						{{ if .Draft  }}<a href="/drafts/" style="color: #888">[DRAFT]</a> {{ end }}
+						<a href="{{ .Permalink }}">{{ .Title }}</a>
+					</div>
+					<div>
+					{{ .Summary }}...
 						<div class="pure-u-1">
 							<div class="l-box postmeta">
 								Published {{ .Date.Format "2006-01-02" }} | {{ .WordCount }} Words | Approx {{ .ReadingTime }} minutes
 							</div>
 						</div>
+					</div>
 				{{ end }}
-			</div>
 			{{ partial "pagination.html" . }}
 			{{ partial "footer.html" . }}
 		</div>

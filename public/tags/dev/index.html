@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev &middot; 3bf57cec3c37</title>
 
-    <meta name="description" content="">
+    <meta name="description" content="5b ee ac c1° 3f 5c 80 42°">
 
     <meta name="generator" content="Hugo 0.17" />
     <meta name="twitter:card" content="summary">
@@ -28,10 +28,10 @@
     <div class="header">
         <hgroup>
             
-            <img src="https://erasche.github.io/assets/pics/me3.png" width="80%" style="max-width: 240px;">
+            <img src="https://erasche.github.io/assets/pics/me3.png" width="80%" style="max-width: 240px;" alt="A stylised picture of the author">
             
             <h1 class="brand-title"><a href="https://erasche.github.io/">3bf57cec3c37</a></h1>
-            <h2 class="brand-tagline"></h2>
+            <h2 class="brand-tagline"> 5b ee ac c1° 3f 5c 80 42° </h2>
         </hgroup>
 
         <nav class="nav">
@@ -96,13 +96,13 @@
 
 		<div style="padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto;">
 			
-			<div class="posts">
 				
-					<h3>
+					<div class="post-title">
 						
-						<a href="https://erasche.github.io/post/2017-01-22-bitesofcode-landscape/" class="post-title">Bitesofcode&#39;s Terrain Generation</a>
-					</h3>
-						Found this blog post and enjoyed the graphics. Re-implementing in JS for a learning exercise.
+						<a href="https://erasche.github.io/post/2017-01-22-bitesofcode-landscape/">Bitesofcode&#39;s Terrain Generation</a>
+					</div>
+					<div>
+					Found this blog post and enjoyed the graphics. Re-implementing in JS for a learning exercise.
 I started this post with the idea of doing fancy controls but&hellip; meh. No time for this, so you just get pretty pictures.
    And here&rsquo;s my code:
 // Adapt to viewport var width = $(&#39;section.post&#39;).width(); // A 1:2 ratio looks nicer. var height = width / 2; // Color function borrowed from original post function color(idx){ var colors = [ [195, 157, 224], [158, 98, 204], [130, 79, 138], [68, 28, 99], [49, 7, 82], [23, 3, 38], [240, 203, 163] ]; return &#39;rgb(&#39; + colors[idx][0] + &#39;,&#39; + colors[idx][1] + &#39;,&#39; +colors[idx][2] + &#39;)&#39;; } // Setup the SVG object on the page function _prep_svg(){ var svg = d3....
@@ -111,23 +111,27 @@ I started this post with the idea of doing fancy controls but&hellip; meh. No ti
 								Published 2017-01-22 | 637 Words | Approx 3 minutes
 							</div>
 						</div>
+					</div>
 				
-					<h3>
-						<a href="https://erasche.github.io/drafts/" class="post-title" style="color: #888">[DRAFT]</a> 
-						<a href="https://erasche.github.io/post/2017-01-07-redeclipse-map-gen/" class="post-title">RedEclipse Map Generation</a>
-					</h3>
-						var svg = d3.select("#ex1"), radius = 18; // var obj = { position: [100, 50] }; // var circle = cartesian(ref(obj, 'x'), ref(obj, 'y')); /* var obj = {x: 0, y: 0}; var circle = cartesian( Model.ref(obj, 'x') .clamped(0, 19) .rounded() .multiply(30) .add(20), Model.ref(obj, 'y') .clamped(0, 3) .rounded() .multiply(20) .add(20) ); */ var obj2 = {radius: 0, angle: 0}; var radial = polar( Model.ref(obj2, 'radius') .clamped(0, 4) ....
+					<div class="post-title">
+						<a href="https://erasche.github.io/drafts/" style="color: #888">[DRAFT]</a> 
+						<a href="https://erasche.github.io/post/2017-01-07-redeclipse-map-gen/">RedEclipse Map Generation</a>
+					</div>
+					<div>
+					var svg = d3.select("#ex1"), radius = 18; // var obj = { position: [100, 50] }; // var circle = cartesian(ref(obj, 'x'), ref(obj, 'y')); /* var obj = {x: 0, y: 0}; var circle = cartesian( Model.ref(obj, 'x') .clamped(0, 19) .rounded() .multiply(30) .add(20), Model.ref(obj, 'y') .clamped(0, 3) .rounded() .multiply(20) .add(20) ); */ var obj2 = {radius: 0, angle: 0}; var radial = polar( Model.ref(obj2, 'radius') .clamped(0, 4) ....
 						<div class="pure-u-1">
 							<div class="l-box postmeta">
 								Published 2017-01-07 | 108 Words | Approx 1 minutes
 							</div>
 						</div>
+					</div>
 				
-					<h3>
+					<div class="post-title">
 						
-						<a href="https://erasche.github.io/post/2017-01-07-circos-thread-tone/" class="post-title">Circos ThreadTone</a>
-					</h3>
-						Background Found ThreadTone a while back. Converting it work output circos-compatible configuration was pretty trivial
+						<a href="https://erasche.github.io/post/2017-01-07-circos-thread-tone/">Circos ThreadTone</a>
+					</div>
+					<div>
+					Background Found ThreadTone a while back. Converting it work output circos-compatible configuration was pretty trivial
 Only notable difficulty was that bezier_radius was set, and it was not clear how that was propagated. So direct experimentation was used to identify reasonable values.
 &lt;colors&gt; &lt;&lt;include etc/colors.conf&gt;&gt; &lt;/colors&gt; &lt;fonts&gt; &lt;&lt;include etc/fonts.conf&gt;&gt; &lt;/fonts&gt; &lt;&lt;include etc/housekeeping.conf&gt;&gt; &lt;&lt;include ideogram.conf&gt;&gt; &lt;&lt;include ticks.conf&gt;&gt; # Use a human karyotype for fun karyotype = data/human.txt &lt;image&gt; dir = /input/ file = circos....
 						<div class="pure-u-1">
@@ -135,12 +139,14 @@ Only notable difficulty was that bezier_radius was set, and it was not clear how
 								Published 2017-01-07 | 186 Words | Approx 1 minutes
 							</div>
 						</div>
+					</div>
 				
-					<h3>
+					<div class="post-title">
 						
-						<a href="https://erasche.github.io/post/2017-01-07-galaxy-instance-testing/" class="post-title">Galaxy Instance Testing</a>
-					</h3>
-						Problem I recently found that some of my org&rsquo;s old workflows were not importable due to bad practices (changing tool IDs, deprecated tools, etc).
+						<a href="https://erasche.github.io/post/2017-01-07-galaxy-instance-testing/">Galaxy Instance Testing</a>
+					</div>
+					<div>
+					Problem I recently found that some of my org&rsquo;s old workflows were not importable due to bad practices (changing tool IDs, deprecated tools, etc).
 Solution Naturally, we threw together a simple tool to verify that all of the workflows could safely be imported. Using a test user account, it runs:
 # Remove old workflows to ensure test only tests latest version of each # workflow remove_all_workflows() # Import all public workflows for workflow in import_shared_workflows(): # Try accessing the JSON workflow representation....
 						<div class="pure-u-1">
@@ -148,12 +154,14 @@ Solution Naturally, we threw together a simple tool to verify that all of the wo
 								Published 2017-01-07 | 141 Words | Approx 1 minutes
 							</div>
 						</div>
+					</div>
 				
-					<h3>
+					<div class="post-title">
 						
-						<a href="https://erasche.github.io/post/2017-01-07-redblob-controls/" class="post-title">Red Blob Controls</a>
-					</h3>
-						Really, really loved the controls in RedBlob&rsquo;s making of tutorial, ok, let&rsquo;s re-implement those quickly.
+						<a href="https://erasche.github.io/post/2017-01-07-redblob-controls/">Red Blob Controls</a>
+					</div>
+					<div>
+					Really, really loved the controls in RedBlob&rsquo;s making of tutorial, ok, let&rsquo;s re-implement those quickly.
 
 var svg = d3.select("#ex1"), radius = 18; // var obj = { position: [100, 50] }; // var circle = cartesian(ref(obj, 'x'), ref(obj, 'y')); /* var obj = {x: 0, y: 0}; var circle = cartesian( Model.ref(obj, 'x') .clamped(0, 19) .rounded() .multiply(30) .add(20), Model.ref(obj, 'y') .clamped(0, 3) .rounded() .multiply(20) .add(20) ); */ var obj2 = {radius: 0, angle: 0}; var radial = polar( Model....
 						<div class="pure-u-1">
@@ -161,35 +169,41 @@ var svg = d3.select("#ex1"), radius = 18; // var obj = { position: [100, 50] }; 
 								Published 2017-01-02 | 123 Words | Approx 1 minutes
 							</div>
 						</div>
+					</div>
 				
-					<h3>
-						<a href="https://erasche.github.io/drafts/" class="post-title" style="color: #888">[DRAFT]</a> 
-						<a href="https://erasche.github.io/post/2016-12-21-graphql/" class="post-title">Notes From Learning GraphQL</a>
-					</h3>
-						https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png...
+					<div class="post-title">
+						<a href="https://erasche.github.io/drafts/" style="color: #888">[DRAFT]</a> 
+						<a href="https://erasche.github.io/post/2016-12-21-graphql/">Notes From Learning GraphQL</a>
+					</div>
+					<div>
+					https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png...
 						<div class="pure-u-1">
 							<div class="l-box postmeta">
 								Published 2016-12-21 | 1 Words | Approx 1 minutes
 							</div>
 						</div>
+					</div>
 				
-					<h3>
-						<a href="https://erasche.github.io/drafts/" class="post-title" style="color: #888">[DRAFT]</a> 
-						<a href="https://erasche.github.io/post/2016-09-13-django-haystack/" class="post-title">Django &#43; Haystack</a>
-					</h3>
-						There is a dearth of good tutorials on Django and Haystack&rsquo;s usage together (at least recent/updated ones). So here&rsquo;s one more! Pull requests are quite welcome on this blog post; I would love for it to stay up to date.
+					<div class="post-title">
+						<a href="https://erasche.github.io/drafts/" style="color: #888">[DRAFT]</a> 
+						<a href="https://erasche.github.io/post/2016-09-13-django-haystack/">Django &#43; Haystack</a>
+					</div>
+					<div>
+					There is a dearth of good tutorials on Django and Haystack&rsquo;s usage together (at least recent/updated ones). So here&rsquo;s one more! Pull requests are quite welcome on this blog post; I would love for it to stay up to date.
 I will try not to make assumptions about you, the reader&rsquo;s, technical skills. If you find that I do, please feel free to edit the post and submit your corrections, or file an issue on the repository, and I will fix them when I find time....
 						<div class="pure-u-1">
 							<div class="l-box postmeta">
 								Published 2016-09-13 | 3826 Words | Approx 18 minutes
 							</div>
 						</div>
+					</div>
 				
-					<h3>
-						<a href="https://erasche.github.io/drafts/" class="post-title" style="color: #888">[DRAFT]</a> 
-						<a href="https://erasche.github.io/post/2016-06-21-gwp/" class="post-title">Galaxy Workflow Plotter</a>
-					</h3>
-						 This past week I was frustrated &ldquo;for the last time&rdquo; by having to take multiple screenshots and stitch them together to plot a galaxy workflow. I knew I could do better&hellip;
+					<div class="post-title">
+						<a href="https://erasche.github.io/drafts/" style="color: #888">[DRAFT]</a> 
+						<a href="https://erasche.github.io/post/2016-06-21-gwp/">Galaxy Workflow Plotter</a>
+					</div>
+					<div>
+					 This past week I was frustrated &ldquo;for the last time&rdquo; by having to take multiple screenshots and stitch them together to plot a galaxy workflow. I knew I could do better&hellip;
 Thus, I spent the week working on this mildly useless tool to plot workflows as slightly prettier &amp; more succict graphics.
 Workflow Plotter    Image of the GWP    Design Functionality Learning ...
 						<div class="pure-u-1">
@@ -197,8 +211,8 @@ Workflow Plotter    Image of the GWP    Design Functionality Learning ...
 								Published 2016-06-21 | 61 Words | Approx 1 minutes
 							</div>
 						</div>
+					</div>
 				
-			</div>
 			
 
 			<div class="footer well">

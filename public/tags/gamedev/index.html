@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work &middot; 3bf57cec3c37</title>
+    <title>Gamedev &middot; 3bf57cec3c37</title>
 
     <meta name="description" content="5b ee ac c1° 3f 5c 80 42°">
 
@@ -99,15 +99,27 @@
 				
 					<div class="post-title">
 						
-						<a href="https://erasche.github.io/post/2017-01-07-galaxy-instance-testing/">Galaxy Instance Testing</a>
+						<a href="https://erasche.github.io/post/2017-01-31-links/">Link Collection / Inspiration</a>
 					</div>
 					<div>
-					Problem I recently found that some of my org&rsquo;s old workflows were not importable due to bad practices (changing tool IDs, deprecated tools, etc).
-Solution Naturally, we threw together a simple tool to verify that all of the workflows could safely be imported. Using a test user account, it runs:
-# Remove old workflows to ensure test only tests latest version of each # workflow remove_all_workflows() # Import all public workflows for workflow in import_shared_workflows(): # Try accessing the JSON workflow representation....
+					 http://blog.elysianlegends.com/?p=11 layout, structure, planning. Started implementing https://github.com/jongallant/DungeonGenerator neat picture https://gamedevelopment.tutsplus.com/tutorials/bake-your-own-3d-dungeons-with-procedural-recipes--gamedev-14360 http://www.gamasutra.com/blogs/AAdonaac/20150903/252889/Procedural_Dungeon_Generation_Algorithm.php  great gifs, &ldquo;tinykeep&rdquo; https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/ more on same algo  https://en.wikipedia.org/wiki/Relative_neighborhood_graph  good for keeping paths between rooms short  http://journal.stuffwithstuff.com/2014/12/21/rooms-and-mazes/ 3 maze-y 5 me  ...
 						<div class="pure-u-1">
 							<div class="l-box postmeta">
-								Published 2017-01-07 | 141 Words | Approx 1 minutes
+								Published 2017-01-31 | 32 Words | Approx 1 minutes
+							</div>
+						</div>
+					</div>
+				
+					<div class="post-title">
+						
+						<a href="https://erasche.github.io/post/2017-01-25-dungeon-gen/">Dungeon Generation</a>
+					</div>
+					<div>
+					Found this blog post, so we&rsquo;re going to re-implement that in JS as well. This looks very promising for building rooms/dungeons for red-eclipse.
+  // Adapt to viewport var width = $('section.post').width(); // These plots are mostly a 1:1 ratio. var height = width; var width = 400; var height = 400; // Setup the SVG object on the page function _prep_svg(){ var svg = d3.select("#plots").append('svg') .attr("width", width) ....
+						<div class="pure-u-1">
+							<div class="l-box postmeta">
+								Published 2017-01-25 | 192 Words | Approx 1 minutes
 							</div>
 						</div>
 					</div>
