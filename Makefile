@@ -1,7 +1,10 @@
-deploy:
+help:
+	@egrep '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
+deploy: ## Deploy to github
 	bash deploy.sh
 
-serve:
+serve: ## Serve a lcoal copy
 	hugo --buildDrafts serve
 
 fetch_repo_data:
