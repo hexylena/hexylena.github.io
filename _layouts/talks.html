@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="home">
+	<h1>Talks</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Meeting</th>
+				<th>Title</th>
+				<th>Source</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for talk in site.data.talks %}
+			<tr>
+				<td>
+					<a href="{{ talk.meeting_url }}">
+						{{ talk.meeting_name }}
+					</a>
+				</td>
+				<td>
+					<a href="{{ talk.pdf_url }}">
+					{{ talk.title }}
+					</a>
+				</td>
+				<td>
+					<a href="{{ talk.data_url }}">
+						GH
+					</a>
+				</td>
+				<td>{{ talk.date }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
