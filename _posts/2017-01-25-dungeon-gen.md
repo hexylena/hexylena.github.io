@@ -21,7 +21,7 @@ promising for building rooms/dungeons for red-eclipse.
 <script src="/js/bboxCollide.js"></script>
 <script type="text/javascript">
 // Adapt to viewport
-var width = $('section.post').width();
+var width = $('article.post').width();
 // These plots are mostly a 1:1 ratio.
 var height = width;
 

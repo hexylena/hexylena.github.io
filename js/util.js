@@ -1,5 +1,5 @@
 // Adapt to viewport
-var width = $('section.post').width();
+var width = $('article.post').width();
 // These plots are mostly a 1:1 ratio.
 var height = width;
 
