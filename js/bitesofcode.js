@@ -1,7 +1,5 @@
-// Hide static versions of plots
-$("#plots-static").css('display', 'none');
 // Adapt to viewport
-var width = $('section.post').width();
+var width = $('article.post').width();
 // A 1:2 ratio looks nicer.
 var height = width / 2;
 
@@ -184,3 +182,6 @@ plot_multi([
 	{ data: midpoint_displacement(180, 80, 1.2, 30, 12),     color: color(2)},
 	{ data: midpoint_displacement(250, 200, 1.4, 20, 12),    color: color(3)},
 ], svg);
+
+// Hide static versions of plots
+$("#plots-static").css('display', 'none');
