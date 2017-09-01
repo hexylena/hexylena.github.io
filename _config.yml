@@ -1,0 +1,13 @@
+# Welcome to Jekyll!
+title: 3bf57cec3c37
+email: hxr@hx42.org
+description: "" # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://erasche.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: erasche
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
