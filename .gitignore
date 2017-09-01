@@ -1,1 +1,5 @@
-themes
+_site
+.sass-cache
+.jekyll-metadata
+.bundle
+vendor
