@@ -10,10 +10,8 @@ layout: default
 		{% for post in site.posts %}
 			<li>
 				<a href="{{ post.url | relative_url }}">
-					<h2>
-						<span class="post-meta">{{ post.date | date: date_format }}</span>
-						{{ post.title | escape }}
-					</h2>
+					<span class="post-meta">{{ post.date | date: date_format }}</span>
+					{{ post.title | escape }}
 				</a>
 			</li>
 		{% endfor %}
