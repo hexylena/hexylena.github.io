@@ -1,26 +1,55 @@
 ---
 layout: default
 ---
+<style>
+table.post-meta td:first-child {
+	text-align: right;
+	padding-right: 1em;
+}
+</style>
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
 		<h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
 
-		<p class="post-meta">
-			<span datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-				{%- assign date_format = site.minima.date_format | default: "%Y-%m-%dT%H:%M" -%}
-				{{- page.date | date: date_format -}}
-			</span>
-			{% if page.repo %}
-				<a href="https://github.com/{{ page.repo }}">
-					github:{{ page.repo }}
-				</a>
+		<table class="post-meta">
+			<tr>
+				<td>Date</td>
+				<td>
+					<span datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+					{%- assign date_format = site.minima.date_format | default: "%Y-%m-%dT%H:%M" -%}
+					{{- page.date | date: date_format -}}
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Project</td>
+				<td>
+					<a href="https://github.com/{{ page.repo }}">
+						github:{{ page.repo }}
+					</a>
+				</td>
+			</tr>
+			{% if page.commit %}
+			<tr>
+				<td>Post as of</td>
+				<td>
+					<a href="https://github.com/{{ page.repo }}/tree/{{ page.commit }}">
+						github.com/{{ page.repo }}@{{ page.commit }}
+					</a>
+				</td>
+			</tr>
 			{% endif %}
-
 			{% if page.author %}
-				<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-			{% endif %}</p>
+			<tr>
+				<td>Author</td>
+				<td>
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+				</td>
+			</tr>
+			{% endif %}
+		</table>
 	</header>
 
 	<div class="post-content" itemprop="articleBody">
