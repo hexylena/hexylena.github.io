@@ -330,9 +330,9 @@ above. Any positional offsets must be grouped in parentheses and a
 ### Checking the Output
 
 1. Open up `redeclipse/cli/magicavoxel_room_test.py` in your editor.
-2. Add your folder name to [this line](https://github.com/erasche/remapper/blob/master/redeclipse/cli/magicavoxel_room_test.py#L13)
+2. Add your folder name to [this line](https://github.com/erasche/remapper/blob/03d366b32bd1344c83d684a9c2f3baa860c27a67/redeclipse/cli/magicavoxel_room_test.py#L13)
 3. [Include your class name in
-   `magica_classes`](https://github.com/erasche/remapper/blob/master/redeclipse/cli/magicavoxel_room_test.py#L26).
+   `magica_classes`](https://github.com/erasche/remapper/blob/03d366b32bd1344c83d684a9c2f3baa860c27a67/redeclipse/cli/magicavoxel_room_test.py#L26).
    If you named your folder `castle` and your model `castle_gate`, then you'd
    add `castle.castle_gate,` to the `magica_classes` variable.
 4. Run `python redeclipse/cli/magicavoxel_room_test.py --magica` which will
@@ -345,7 +345,7 @@ above. Any positional offsets must be grouped in parentheses and a
    test that you've got the doorways correctly defined. The room is output in
    every rotation as a further test that everything is working properly.
 6. If everything looks good, you're ready to add it into the [main room
-   generation script](https://github.com/erasche/remapper/blob/master/redeclipse/cli/magica_rooms.py#L29).
+   generation script](https://github.com/erasche/remapper/blob/03d366b32bd1344c83d684a9c2f3baa860c27a67/redeclipse/cli/magica_rooms.py#L29).
    You'll want to edit `redeclipse/cli/magica_rooms.py`, add your project name
    to the import list on line 15, and then add your `project.model_name`s to
    the `possible_rooms` array (same as `magica_classes`)
