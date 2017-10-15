@@ -16,6 +16,9 @@ Quick `remapper` update:
 
 Starting to produce nicer maps! But still a few pain points that must be solved first.
 
+* TOC
+{:toc}
+
 ## Unbounded execution
 
 Originally the code had the bad behaviour that looked more or less like this:
