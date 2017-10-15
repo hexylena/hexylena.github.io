@@ -18,6 +18,7 @@ layout: default
 					</span>
 				</td>
 			</tr>
+			{% if page.repo %}
 			<tr>
 				<td>Project</td>
 				<td>
@@ -26,6 +27,7 @@ layout: default
 					</a>
 				</td>
 			</tr>
+			{% endif %}
 			{% if page.commit %}
 			<tr>
 				<td>Post as of</td>
