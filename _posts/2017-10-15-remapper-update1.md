@@ -352,7 +352,9 @@ above. Any positional offsets must be grouped in parentheses and a
 7. Run it!
 
    ```
-   python redeclipse/cli/magica_rooms.py maps/empty-day.mpz --seed 42 --rooms 200 --mpz_out ~/.redeclipse/maps/test.mpz
+   python redeclipse/cli/magica_rooms.py maps/empty-day.mpz \
+        --seed 42 --rooms 200 \
+        --mpz_out ~/.redeclipse/maps/test.mpz
    ```
 
 8. Launch redeclipse and open the map. `\`/map test<enter>`
