@@ -140,6 +140,8 @@ table.post-meta td:first-child {
 .header-link {
     opacity: 0;
     text-decoration: none;
+
+    margin-left: -1em;
 }
 
 h2:hover .header-link,
@@ -150,8 +152,4 @@ h6:hover .header-link {
     opacity: 1;
     text-decoration: none;
     color: $grey-color-dark;
-}
-
-h2,h3,h4,h5,h6 {
-    margin-left: -1em;
 }
