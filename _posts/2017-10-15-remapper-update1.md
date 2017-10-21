@@ -357,4 +357,4 @@ above. Any positional offsets must be grouped in parentheses and a
         --mpz_out ~/.redeclipse/maps/test.mpz
    ```
 
-8. Launch redeclipse and open the map.
+8. Launch redeclipse and open the map. `<backtick>/map test<enter>`
