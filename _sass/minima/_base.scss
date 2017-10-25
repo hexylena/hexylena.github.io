@@ -87,9 +87,13 @@ blockquote {
 pre {
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
-  background-color: #eef;
+  background-color: #eee;
   padding: 8px 12px;
   overflow-x: auto;
+}
+
+code {
+  font-family: $mono-font-family;
 }
 
 
