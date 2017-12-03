@@ -6,20 +6,15 @@ Tags:
 date: 2017-12-01 00:00:00+00:00
 title: REmapper Ideas / Planning
 repo: erasche/remapper
+page_requires:
+- d3v4.12
+- jquery
 ---
 
 * TOC
 {:toc}
 
-## Egypt
-
-After watching some [Assassins Creed: Origins](https://youtu.be/XNpzLjf2BWA?t=457) it was clear that the city shown was highly regular, on a rectangular grid (more or less) and with rectangular buildings (mostly.)
-
-![Wallpaper of AC:O, source unknown](/assets/img/remapper/assassins-creed-origins-memphis-canal-1421-979x551.jpg)
-
-This should surely be easy to re-create... but there is a complication, all units should be "grounded", something currently not done in any maps. So the algorithm has be re-implemented from scratch.
-
-### Evolving Villages
+## Evolving Villages
 
 Ok, so if we're building up villages on flat ground now (particularly egyptian ones, can we evolve them?)
 
@@ -33,11 +28,61 @@ Thought: Could we use BSP here? layout some "rooms" which are actually the big b
 
 It'd be nice to have a river running through...
 
-### Rivers
+
+### Research
+
+- [https://is.mendelu.cz/eknihovna/opory/zobraz_cast.pl?cast=71671](https://is.mendelu.cz/eknihovna/opory/zobraz_cast.pl?cast=71671)
+- [Castra - Wikipedia](https://en.wikipedia.org/wiki/Castra)
+- [History of urban planning - Wikipedia](https://en.wikipedia.org/wiki/History_of_urban_planning)
+- [Urban planning in China - Wikipedia](https://en.wikipedia.org/wiki/Urban_planning_in_China)
+- [Ancient Chinese urban planning - Wikipedia](https://en.wikipedia.org/wiki/Ancient_Chinese_urban_planning)
+- [File:Elburg after cadastral plan 1830.jpg - Wikipedia](https://en.wikipedia.org/wiki/File:Elburg_after_cadastral_plan_1830.jpg)
+
+### Thoughts
+
+- Roman fortresses are small and probably a tractable thing to implement, however incredibly dull (completely flat terrain, mostly single story buildings, etc.)
+- The city layout is awesome and impressive, but it is large. Especially things like Elburg, this would be great to implement but is far, far too large for the preferred game size. Let's start by implementing a simple city block, that's a reachable target. Maybe we can squash some city blocks together? It would be overly regular, but ... maybe this isn't so bad.
+- Historical urban planning is not a popular topic.
+
+### City Block Layout Test
+
+- Buildings should be placed around the edges
+- A courtyard should be built (space permitting)
+- (if there is a courtyard) One of the buildings should be replaced with a gateway
+	- does placement matter? Should we be concerned with placing the entrance on a less-busy street?
+- Buildings need a walkway runing from outside wall to courtyard
+- Place corner buildings first? Those might be tricky otherwise.
+- BSP? BSP per-edge could work.
+
+<div id="cityblock">
+</div>
+
+<script src="/js/cityblock.js"></script>
+See [/js/cityblock.js](/js/cityblock.js) for the source.
+
+Well heck, that worked pretty OK! Let's add a some entrances and a courtyard where we can place various ... stuff.
+
+<div id="cityblock2">
+</div>
+<script src="/js/cityblock2.js"></script>
+See [/js/cityblock2.js](/js/cityblock2.js) for the source.
+
+### Courtyard Layout Test
+
+But what about that empty space? Could have a garden thing. Or a small green space with trees. Maybe walkways. Maze?
+
+TODO.
+
+<!--<div id="courtyard1">-->
+<!--</div>-->
+<!--<script src="/js/courtyard1.js"></script>-->
+<!--See [/js/courtyard1.js](/js/courtyard1.js) for the source.-->
+
+## Rivers
 
 Well at least we can simulate a river, right?
 
-#### Research
+### Research
 
 - [doi:10.1016/j.geomorph.2012.09.006](http://dx.doi.org/10.1016/j.geomorph.2012.09.006)
 - [Procedure for rivers and lakes (and snow) — Entropic Particles](http://www.entropicparticles.com/procedure-for-rivers-and-lakes/)
@@ -62,33 +107,27 @@ Well let's settle for something that looks enough like a river that no one bats 
 - [Water erosion on heightmap terrain](http://ranmantaru.com/blog/2011/10/08/water-erosion-on-heightmap-terrain/)
 - [Time lapse of a river changing course : gifs](https://www.reddit.com/r/gifs/comments/1ztfh5/time_lapse_of_a_river_changing_course/)
 
-#### Erosion
+### Erosion
 
 Did not even attempt.
 
-#### Random Walks
+### Random Walks
 
 The random walk approach seemed easy enough to implement and doesn't look horrible?
 
-![Random walks from (0,0) to (10, 10)](/assets/img/remapper/rivers.png)
+{% include figure.html file="remapper/rivers.png" alt="Random walks from (0,0) to (10, 10)" %}
 
 The algorithm was *supposed* to avoid overlapping with itself but that apparently seriously decreases the amount of random walks we discover. So we limited serious overlaps and it works well enough.
 
-![An example output](/assets/img/remapper/river_larger_orig_0.png)
-![An example output](/assets/img/remapper/river_larger_orig_1.png)
-![An example output](/assets/img/remapper/river_larger_orig_2.png)
-![An example output](/assets/img/remapper/river_larger_orig_3.png)
+{% include figure.html file="remapper/river_larger_orig.png" alt="Four example outputs from the random walk algorithm" %}
 
 I applied some (poorly implemented) dilation to the resulting river which turned out pretty well. The results look pretty decent, they'll probably even look OK inside a redeclipse map as well.
 
-![An example output](/assets/img/remapper/river_larger_0.png)
-![An example output](/assets/img/remapper/river_larger_1.png)
-![An example output](/assets/img/remapper/river_larger_2.png)
-![An example output](/assets/img/remapper/river_larger_3.png)
+{% include figure.html file="remapper/river_larger.png" alt="The same four example outputs after the dilation has been applied." %}
 
 I originally coded it with the intention of having *no* overlaps since those seemed implausible but it seems to have created a nice delta effect when occuring near the goal.
 
-#### TODO
+### TODO
 
 This implementation sucks for a whole host of reasons:
 

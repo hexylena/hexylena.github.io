@@ -12,7 +12,6 @@ ready(function(){
 	Array.prototype.forEach.call(elements, function(el, i){
 		var id = el.id;
 		if(id){
-			console.log(id);
 			var ln = document.createElement('a');
 			ln.classList.add('header-link');
 			ln.setAttribute('href', '#' + id);
