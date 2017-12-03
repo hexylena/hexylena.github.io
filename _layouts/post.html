@@ -33,7 +33,7 @@ layout: default
 				<td>Post as of</td>
 				<td>
 					<a href="https://github.com/{{ page.repo }}/tree/{{ page.commit }}">
-						github.com/{{ page.repo }}@{{ page.commit }}
+						github.com/{{ page.repo }}@{{ page.commit | truncate: 20, "" }}
 					</a>
 				</td>
 			</tr>

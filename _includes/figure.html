@@ -1,0 +1,10 @@
+<figure>
+  <img
+    src="/assets/img/{{ include.file }}"
+    alt="{{ include.alt }}">
+  {% if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {% else %}
+  <figcaption>{{ include.alt }}</figcaption>
+  {% endif %}
+</figure>
