@@ -3,7 +3,7 @@ layout: post
 Tags:
 - gamedev
 - mapgen
-date: 2017-12-01 00:00:00+00:00
+date: 2017-12-03 22:33:49+00:00
 title: REmapper Ideas / Planning
 repo: erasche/remapper
 page_requires:
