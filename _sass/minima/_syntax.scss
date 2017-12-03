@@ -12,7 +12,14 @@
   color: #000;
 }
 
-.highlight .cp, .highlight .nt, .highlight .gi, .highlight .gd,
+.highlight .gi {
+	color: #4515b5;
+}
+.highlight .gd {
+	color: #028857;
+}
+
+.highlight .cp, .highlight .nt,,
 .highlight .nn, .highlight .nc, .highlight .no, .highlight .m,
 .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il,
 .highlight .mo, .highlight .mb, .highlight .mx, .highlight .ss {
