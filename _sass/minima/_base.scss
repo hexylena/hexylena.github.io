@@ -86,8 +86,8 @@ blockquote {
  */
 pre {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
-  background-color: #eef;
+  border: 1px solid $grey-color-dark;
+  background-color: #fff;
   padding: 8px 12px;
   overflow-x: auto;
 }
@@ -135,8 +135,9 @@ pre {
 table.post-meta td:first-child {
 	text-align: right;
 	padding-right: 1em;
-    min-width: 5em;
+	min-width: 5em;
 }
+
 
 .header-link {
     opacity: 0;
@@ -157,4 +158,36 @@ h6:hover .header-link {
 
 project {
     font-variant: small-caps
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+
+	thead {
+		tr {
+			th:first-child {
+				text-align: right;
+			}
+			th {
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				border-bottom: 1px solid black;
+				text-align: left;
+			}
+		}
+	}
+	tbody {
+		tr {
+			td {
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				border: 0px;
+				vertical-align: top;
+			}
+			td:first-child {
+				text-align: right;
+			}
+		}
+	}
 }
