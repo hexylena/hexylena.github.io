@@ -54,6 +54,8 @@ It'd be nice to have a river running through...
 - Place corner buildings first? Those might be tricky otherwise.
 - BSP? BSP per-edge could work.
 
+<script src="/js/city_lib.js"></script>
+
 <div id="cityblock">
 </div>
 
@@ -69,14 +71,63 @@ See [/js/cityblock2.js](/js/cityblock2.js) for the source.
 
 ### Courtyard Layout Test
 
-But what about that empty space? Could have a garden thing. Or a small green space with trees. Maybe walkways. Maze?
+but what about that empty space? could have a garden thing. or a small green space with trees. maybe walkways. maze?
 
-TODO.
+<div id="courtyard1">
+</div>
+<script src="/js/courtyard1.js"></script>
+<script src="/js/courtyard2.js"></script>
+<script src="/js/courtyard3.js"></script>
+<script src="/js/courtyard4.js"></script>
+<script src="/js/courtyard5.js"></script>
+<script src="/js/courtyard6.js"></script>
+See [/js/courtyard1.js](/js/courtyard1.js), [/js/courtyard2.js](/js/courtyard2.js), [/js/courtyard3.js](/js/courtyard3.js), [/js/courtyard4.js](/js/courtyard4.js), [/js/courtyard5.js](/js/courtyard5.js), [/js/courtyard6.js](/js/courtyard6.js) for sources.
 
-<!--<div id="courtyard1">-->
-<!--</div>-->
-<!--<script src="/js/courtyard1.js"></script>-->
-<!--See [/js/courtyard1.js](/js/courtyard1.js) for the source.-->
+Those look... alright? the asymmetry of the penultimate one really bothers me. It's a nice overall design and I like the transition from grid on 90° to on 45° offset. That's kinda cool. The last one is probably the most plausible.
+
+Should add other features that are more interesting than just an orchard. And orchards are just especially boring even if with fun patterns.
+
+- raised flowerbeds (offering some cover)
+- park benches (flavor)
+- ponds (irregular shapes?)
+- ponds (regular shapes, raised border?)
+- empty areas?
+- tiny soccer pitch
+
+## Fortresses / Battlements
+
+Would be nice to build fortresses. The ones in AC:O are really quite nice. Notable features:
+
+- boundary wall
+- stuff inside?
+- sometimes boundary wall is wide enough to walk around
+- if border wall connects to buildings then the top level should be used, put some tables or stuff on top
+- gates?
+- what shape, regular, not?
+- Can this be evolved? from a tiny temporary foritifaction to something larger?
+- Time setting? Are they historical camps? European? Middle eastern? HESCOs everywhere?
+
+### Research
+
+- [Base Camp Facilites Standards for Contingency Operations](http://www.eur.army.mil/pdf/Red_Book.pdf)
+	- "Initial" (0-6 months) -> "Temporary" (6-24) -> "Semi Permanent" (2-25 years)
+	- Categorisations: Main Base (500 people), FOB (company, 80-150), Outposts
+- [Army Logistician (Building a FOB From the Ground Up)](http://www.alu.army.mil/alog/issues/SepOct07/FOB_groundup.html)
+- [STANDARD FORWARD OPERATING BASE DESIGNS INCORPORATING DoD AND ARMY EXPLOSIVES SAFETY REQUIREMENTS](http://www.dtic.mil/get-tr-doc/pdf?AD=ADA532176)
+- [SUSTAINABLE DESIGN OF FORWARD OPERATING BASES](http://www.bristol.ac.uk/media-library/sites/eng-systems-centre/migrated/documents/theoslides.pdf)
+f you've got an idea, constructive criticism, tips or anything it's all good, let us know.
+The more suggestions and feedback the better. Might not even end up as an FOB.
+Maybe a National Guard Outpost or something? who knows, you decide.
+Edit:
+
+It's gonna be a real tight squeeze, so much so that it might be worth making it a 4x4 simply for the outer defense zone. if anyone wants to suggest an alternative layout I'm listening.
+- [Mathematical Model of Sub-System Interactions for Forward Operating Bases](http://www.iise.org/uploadedFiles/IIE/Community/Technical_Societies_and_Divisions/SEMS/Student_3rd%20Place_PoreddyDanielsISERC2012.pdf)
+- http://adminpubs.tradoc.army.mil/pamphlets/TP525-7-7.pdf
+- http://www.pnnl.gov/main/publications/external/technical_reports/PNNL-23133.pdf
+
+
+### Evolution
+
 
 ## Rivers
 
