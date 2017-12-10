@@ -16,7 +16,7 @@ var svg = d3.select("#courtyard1").append('svg')
 // Forest style.
 
 trees = [];
-for(var i = 0; i < 30; i++){
+for(var i = 0; i < 80; i++){
 	tree_radius = getRandomArbitrary(width / 80, width / 20);
 	cx = getRandomArbitrary(tree_radius, width - tree_radius);
 	cy = getRandomArbitrary(tree_radius, width - tree_radius);
@@ -30,10 +30,16 @@ for(var i = 0; i < 30; i++){
 		trees.push({
 			cx: cx,
 			cy: cy,
+			r: tree_radius / 3,
+			fill: '#8a0808',
+		});
+		trees.push({
+			cx: cx,
+			cy: cy,
 			r: tree_radius
 		});
 	}
 
 }
 
-draw_circles('trees', trees, {'fill': '#ccc', 'stroke': '#333'});
+draw_circles('trees', trees, {'fill': 'rgba(0, 200, 0, 0.9)', 'stroke': '#3a3'});

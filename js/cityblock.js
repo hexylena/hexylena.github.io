@@ -2,21 +2,6 @@
 var width = $('article.post').width();
 var height = width / 1.5;
 
-function getRandomArbitrary(min, max) {
-	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-	return Math.random() * (max - min) + min;
-}
-
-function getRandomInteger(min, max) {
-	// Inclusive of boundaries
-	return Math.round(getRandomArbitrary(min, max))
-}
-
-function choice(choices) {
-	var index = Math.floor(Math.random() * choices.length);
-	return choices[index];
-}
-
 
 var svg = d3.select("#cityblock").append('svg')
 	.attr("width", width)
@@ -53,23 +38,6 @@ streets = [
 blkstrt = bw + sw;
 blkwidth = width - 2 * (bw + sw);
 blkheight = height - 2 * (bw + sw);
-
-function draw_rects(name, blocks, styling){
-	var tmp = svg.append("g")
-		.attr("id", name);
-
-	blocks.forEach(function(d){
-		tmp.append("rect")
-			.data([d])
-			.attr("x", function(d){ return d[0] })
-			.attr("y", function(d){ return d[1] })
-			.attr("width", function(d){ return d[2] })
-			.attr("height", function(d){ return d[3] })
-			.attr("fill", function(d){ return styling.fill || 'black' })
-			.attr("stroke", function(d){ return styling.stroke || 'red' })
-	})
-
-}
 
 draw_rects('surrounding', surrounding, {'fill': '#ccc', 'stroke': '#333'});
 draw_rects('street', streets, {'fill': '#999', 'stroke': 'none'});
