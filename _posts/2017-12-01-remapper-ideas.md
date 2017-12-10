@@ -94,6 +94,24 @@ Should add other features that are more interesting than just an orchard. And or
 - empty areas?
 - tiny soccer pitch
 
+### Interiors
+
+Nice houses around the edge but no interiors developed yet. As always, would be nice if the houses were themeable somehow. Most house design seems to revolve around a "backbone" and then rooms of various sizes sprouting from there.
+
+I've done some reading in the past here to develop accurate interiors but that is a complex and ongoing area of research. And this is a game, one that's rendered in relatively low detail, and usually without models if it is coming from the remapper project. We can get away with really incredibly basic interiors.
+
+We could use more or less the same building blocks that are in use with the prefabs. Or at least use them for reference sizes.
+
+- Should try to have more variables for better variety, otherwise they'll be incredibly boring.
+- Consider punching doorways in multiple buildings?
+
+<div id="apartment">
+</div>
+
+<script src="/js/apartment.js"></script>
+See [/js/apartment.js](/js/apartment.js) for the source.
+
+
 ## Fortresses / Battlements
 
 Would be nice to build fortresses. The ones in AC:O are really quite nice. Notable features:
@@ -115,19 +133,17 @@ Would be nice to build fortresses. The ones in AC:O are really quite nice. Notab
 - [Army Logistician (Building a FOB From the Ground Up)](http://www.alu.army.mil/alog/issues/SepOct07/FOB_groundup.html)
 - [STANDARD FORWARD OPERATING BASE DESIGNS INCORPORATING DoD AND ARMY EXPLOSIVES SAFETY REQUIREMENTS](http://www.dtic.mil/get-tr-doc/pdf?AD=ADA532176)
 - [SUSTAINABLE DESIGN OF FORWARD OPERATING BASES](http://www.bristol.ac.uk/media-library/sites/eng-systems-centre/migrated/documents/theoslides.pdf)
-f you've got an idea, constructive criticism, tips or anything it's all good, let us know.
-The more suggestions and feedback the better. Might not even end up as an FOB.
-Maybe a National Guard Outpost or something? who knows, you decide.
-Edit:
-
-It's gonna be a real tight squeeze, so much so that it might be worth making it a 4x4 simply for the outer defense zone. if anyone wants to suggest an alternative layout I'm listening.
 - [Mathematical Model of Sub-System Interactions for Forward Operating Bases](http://www.iise.org/uploadedFiles/IIE/Community/Technical_Societies_and_Divisions/SEMS/Student_3rd%20Place_PoreddyDanielsISERC2012.pdf)
-- http://adminpubs.tradoc.army.mil/pamphlets/TP525-7-7.pdf
-- http://www.pnnl.gov/main/publications/external/technical_reports/PNNL-23133.pdf
+- [http://adminpubs.tradoc.army.mil/pamphlets/TP525-7-7.pdf](http://adminpubs.tradoc.army.mil/pamphlets/TP525-7-7.pdf)
+- [http://www.pnnl.gov/main/publications/external/technical_reports/PNNL-23133.pdf](http://www.pnnl.gov/main/publications/external/technical_reports/PNNL-23133.pdf)
 
+### Testing
 
-### Evolution
+Ok, enough reading, can we build a simple outpost. Just as proof o concept. Bare minimum would be:
 
+- tents
+- watch tower
+- barrier wall.
 
 ## Rivers
 
