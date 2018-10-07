@@ -161,7 +161,7 @@ Well at least we can simulate a river, right?
 
 Hahahah no.
 
-Well let's settle for something that looks enough like a river that no one bats an eye. 
+Well let's settle for something that looks enough like a river that no one bats an eye.
 
 - [Good method for adding rivers to a heightmap? : proceduralgeneration](https://www.reddit.com/r/proceduralgeneration/comments/47xucj/good_method_for_adding_rivers_to_a_heightmap/)
 - [Realistic drainage in heightmaps. : proceduralgeneration](https://www.reddit.com/r/proceduralgeneration/comments/3bh5v0/realistic_drainage_in_heightmaps/)
