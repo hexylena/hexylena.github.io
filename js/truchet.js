@@ -27,6 +27,20 @@ function getRandomColor() {
   return color;
 }
 
+function downloadSVG(evt){
+	const svgContent = svg.outerHTML,
+		blob = new Blob([svgContent], {
+			type: "image/svg+xml"
+		}),
+		url = window.URL.createObjectURL(blob),
+		link = evt.target;
+
+	link.target = "_blank";
+	link.download = "TruchetTiles.svg";
+	link.href = url;
+}
+
+
 var TILES = [
     '<g inkscape:label="Layer 1" inkscape:groupmode="layer" transform="translate(0,-207)">    <path style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.37795275;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" d="M 0 -113.38672 A 113.38583 113.38583 0 0 0 -113.38672 0 A 113.38583 113.38583 0 0 0 0 113.38672 L 226.77148 340.1582 A 113.38583 113.38583 0 0 0 340.1582 453.54297 A 113.38583 113.38583 0 0 0 453.54297 340.1582 A 113.38583 113.38583 0 0 0 340.1582 226.77148 L 113.29492 1.8496094 A 113.38583 113.38583 0 0 0 113.38672 0 A 113.38583 113.38583 0 0 0 0 -113.38672 z " transform="matrix(0.26458333,0,0,0.26458333,0,207)" />    <path style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.37795269;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" d="M 0 113.38672 A 56.692912 56.692912 0 0 0 -56.693359 170.07812 A 56.692912 56.692912 0 0 0 0 226.77148 C 62.621958 226.77099 113.38721 277.53624 113.38672 340.1582 A 56.692913 56.692913 0 0 0 170.07812 396.84961 A 56.692913 56.692913 0 0 0 226.77148 340.1582 C 226.77139 214.9158 125.24239 113.38681 0 113.38672 z " transform="matrix(0.26458333,0,0,0.26458333,0,207)"  />    <circle style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"  cx="90" cy="207" r="30" />    <circle r="30" cy="297" cx="0"  style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />    <path  d="M 89.999953,267 A 14.999999,14.999999 0 0 0 105.00007,252.0004 14.999999,14.999999 0 0 0 89.999953,237.00028 C 73.431227,237.00041 59.999587,223.56877 59.999717,207.00005 A 15,15 0 0 0 45.000118,192.00045 15,15 0 0 0 30,207.00005 C 30.000023,240.1371 56.862904,266.99998 89.999953,267 Z" style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" inkscape:connector-curvature="0" /></g>',
     '<g inkscape:label="Layer 1" inkscape:groupmode="layer"  transform="translate(0,-207)">    <path inkscape:connector-curvature="0" style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" d="M 120,207 A 30,30 0 0 0 89.999762,176.99976 30,30 0 0 0 59.999526,207 L -4.2728281e-4,266.99995 A 30,30 0 0 0 -30.000147,297.00019 30,30 0 0 0 -4.2728281e-4,326.99991 30,30 0 0 0 29.999809,297.00019 l 59.510577,-60.02424 a 30,30 0 0 0 0.489376,0.0243 A 30,30 0 0 0 120,207 Z"  />    <path inkscape:connector-curvature="0" style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" d="M 59.999526,207 A 14.999999,14.999999 0 0 0 44.999927,191.99988 14.999999,14.999999 0 0 0 29.999809,207 c 1.29e-4,16.56873 -13.43151,30.00037 -30.00023628281,30.00024 A 15,15 0 0 0 -15.000029,251.99984 15,15 0 0 0 -4.2728281e-4,266.99995 C 33.136624,266.99993 59.999502,240.13705 59.999526,207 Z"  />    <circle style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"  cx="297" cy="-89.999763" r="30" transform="rotate(90)" />    <circle r="30" cy="0.00023799999" cx="207"  style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" transform="rotate(90)" />    <path  d="m 29.999762,296.99995 a 14.999999,14.999999 0 0 0 14.9996,15.00012 14.999999,14.999999 0 0 0 15.00012,-15.00012 c -1.3e-4,-16.56873 13.43151,-30.00037 30.00023,-30.00024 A 15,15 0 0 0 104.99931,252.00012 15,15 0 0 0 89.999712,237 c -33.13705,2e-5 -59.99993,26.8629 -59.99995,59.99995 z" style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" inkscape:connector-curvature="0" />  </g>    ',
@@ -156,7 +170,6 @@ gui.add(text, 'debug').onChange(render);
 //gui.add(text, 'width', 0, 1000).onChange(render);
 //gui.add(text, 'divisions', 1, 20).onChange(render);
 
-
 document.getElementById("plot").addEventListener("click", function(evt){
 	console.log(evt.target)
 	q.all_children(false).forEach(function(item){
@@ -166,6 +179,19 @@ document.getElementById("plot").addEventListener("click", function(evt){
 			render()
 		}
 	})
+})
+
+document.getElementById("download").addEventListener("click", function(evt){
+	var svgData = svg.outerHTML;
+	var preface = '<?xml version="1.0" standalone="no"?>\r\n';
+	var svgBlob = new Blob([preface, svgData], {type:"image/svg+xml;charset=utf-8"});
+	var svgUrl = URL.createObjectURL(svgBlob);
+	var downloadLink = document.createElement("a");
+	downloadLink.href = svgUrl;
+	downloadLink.download = "Testing.svg";
+	document.body.appendChild(downloadLink);
+	downloadLink.click();
+	document.body.removeChild(downloadLink);
 })
 
 function render() {
@@ -181,9 +207,7 @@ function render() {
 	kids.sort(function(a, b) {
 		return a.depth - b.depth;
 	})
-	console.log('hi!', kids)
 	kids.forEach(function(item, index){
-		console.log(item)
 
 
 		randomSetSeed(hashCode(text.seed + item.id()));
@@ -202,7 +226,7 @@ function render() {
 			h = item.height * text.height,
 			x = item.x0 * text.width,
 			y = item.y0 * text.width,
-			c = getRandomColor() + (text.debug ? '66' : '00');
+			c = getRandomColor() + ';fill-opacity:' + (text.debug ? '0.5' : '0');
 
 		svg.innerHTML += '<rect width="' + w + '" height="' + w + '"   x="' + x + '"   y="' + y + '" id="' + item.id() + '" style="fill:' + c + '"/>';
 	})

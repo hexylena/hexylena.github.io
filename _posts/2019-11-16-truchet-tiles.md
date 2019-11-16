@@ -12,7 +12,11 @@ page_requires:
 
 Found [this paper](http://archive.bridgesmathart.org/2018/bridges2018-39.pdf) and enjoyed the graphics, so here.
 
+Click on it! :)
+
 <svg id="plot" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+
+<button id="download">Download</button>
 
 <script src="/js/truchet.js"></script>
 See [/js/truchet.js](/js/truchet.js) for the source.
