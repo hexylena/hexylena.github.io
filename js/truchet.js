@@ -58,13 +58,14 @@ var TILES = [
     '<g inkscape:label="Layer 1" inkscape:groupmode="layer"  transform="translate(0,-207)">    <circle style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"  cx="-89.99971" cy="-206.99954" r="30" transform="scale(-1)" />    <path inkscape:connector-curvature="0" style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" d="m -4.77e-4,326.99977 a 30,30 0 0 0 30.00023,-30.00025 h 29.99972 0.0501 a 29.95,29.95 0 0 0 29.95012,29.95012 29.95,29.95 0 0 0 29.950107,-29.95012 29.95,29.95 0 0 0 -29.950117,-29.95011 29.95,29.95 0 0 0 -0.0522,0.002 l 0.0522,-0.0521 -59.99995,-59.99995 -0.0527,0.0527 a 29.95,29.95 0 0 0 0.003,-0.0527 29.95,29.95 0 0 0 -29.95017,-29.94959 29.95,29.95 0 0 0 -29.94958,29.94959 29.95,29.95 0 0 0 29.94958,29.95011 29.95,29.95 0 0 0 0.0522,-0.002 l -0.0522,0.0523 30.13563,30.13562 H 2.715973 a 30,30 0 0 0 -2.71611,-0.13591 30,30 0 0 0 -29.99967,30.00007 30,30 0 0 0 29.99972,30.00025 z"  />    <circle style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"  cx="44.999718" cy="-296.99951" r="14.999998" transform="scale(1,-1)" />    <path style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 60.332793,296.99952 H -2.87e-4 v -60 h 36.01155 l 38.98845,46.97362 -14.94753,12.97367 v 0"  inkscape:connector-curvature="0" />    <path inkscape:connector-curvature="0" style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" d="m -0.044927,267.04683 c 0.76518,0 1.52536,-0.0192 2.28358,-0.0476 h 87.76105 a 15,15 0 0 0 14.999607,-15.00006 15,15 0 0 0 -14.999607,-14.9996 c -16.56872,1.3e-4 -30.00036,-13.43152 -30.00023,-30.00024 a 14.999999,14.999999 0 0 0 -15.00012,-15.00012 14.999999,14.999999 0 0 0 -8.48062,2.64739 14.999999,14.999999 0 0 0 -0.10748,0.077 14.999999,14.999999 0 0 0 -1.01545,0.77153 14.999999,14.999999 0 0 0 -0.33693,0.29611 14.999999,14.999999 0 0 0 -0.69866,0.6506 14.999999,14.999999 0 0 0 -0.5302,0.56948 14.999999,14.999999 0 0 0 -0.4129,0.47025 14.999999,14.999999 0 0 0 -0.66559,0.8754 14.999999,14.999999 0 0 0 -0.1788,0.2496 14.999999,14.999999 0 0 0 -0.72761,1.18649 14.999999,14.999999 0 0 0 -0.0124,0.0217 14.999999,14.999999 0 0 0 -1.8774,7.23211 c 1.2e-4,16.00649 -12.53605,29.08364 -28.3254,29.9527 h -1.63039 v 0.047 c -0.0149,2e-5 -0.0296,5.3e-4 -0.0444,5.3e-4 a 15,15 0 0 0 -14.99961,14.9996 15,15 0 0 0 14.99961,15.00012 z"  />  </g>',
     '<g inkscape:label="Layer 1" inkscape:groupmode="layer"  transform="translate(0,-207)">    <circle style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"  cx="-296.99942" cy="90.000076" r="30" transform="rotate(-90)" />    <path inkscape:connector-curvature="0" style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" d="m -30.000148,206.99924 a 30,30 0 0 0 30.00025,30.00023 v 29.99972 0.0501 a 29.95,29.95 0 0 0 -29.95012,29.95012 29.95,29.95 0 0 0 29.95012,29.95011 29.95,29.95 0 0 0 29.95011,-29.95012 29.95,29.95 0 0 0 -0.002,-0.0522 l 0.0521,0.0522 59.99995,-59.99995 -0.0527,-0.0527 a 29.95,29.95 0 0 0 0.0527,0.003 29.95,29.95 0 0 0 29.949588,-29.95017 29.95,29.95 0 0 0 -29.949588,-29.94958 29.95,29.95 0 0 0 -29.95011,29.94958 29.95,29.95 0 0 0 0.002,0.0522 l -0.0523,-0.0522 -30.13562,30.13563 v -27.41952 a 30,30 0 0 0 0.13591,-2.71611 30,30 0 0 0 -30.00007,-29.99967 30,30 0 0 0 -30.00025,29.99972 z"  />    <circle style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"  cx="251.99944" cy="0.00010828125" r="14.999998" transform="matrix(0,1,1,0,0,0)" />    <path style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 1.02e-4,267.33251 v -60.33308 h 60 v 36.01155 L 13.026482,281.99943 0.052812,267.0519 v 0"  inkscape:connector-curvature="0" />    <path inkscape:connector-curvature="0" style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" d="m 29.952792,206.95479 c 0,0.76518 0.0192,1.52536 0.0476,2.28358 v 87.76105 a 15,15 0 0 0 15.00006,14.99961 15,15 0 0 0 14.9996,-14.99961 c -1.3e-4,-16.56872 13.43152,-30.00036 30.00024,-30.00023 a 14.999999,14.999999 0 0 0 15.000118,-15.00012 14.999999,14.999999 0 0 0 -2.64739,-8.48062 14.999999,14.999999 0 0 0 -0.077,-0.10748 14.999999,14.999999 0 0 0 -0.77153,-1.01545 14.999999,14.999999 0 0 0 -0.29611,-0.33693 14.999999,14.999999 0 0 0 -0.6506,-0.69866 14.999999,14.999999 0 0 0 -0.569478,-0.5302 14.999999,14.999999 0 0 0 -0.47025,-0.4129 14.999999,14.999999 0 0 0 -0.8754,-0.66559 14.999999,14.999999 0 0 0 -0.2496,-0.1788 14.999999,14.999999 0 0 0 -1.18649,-0.72761 14.999999,14.999999 0 0 0 -0.0217,-0.0124 14.999999,14.999999 0 0 0 -7.23211,-1.8774 c -16.00649,1.2e-4 -29.08364,-12.53605 -29.9527,-28.3254 v -1.63039 h -0.047 c -2e-5,-0.0149 -5.3e-4,-0.0296 -5.3e-4,-0.0444 a 15,15 0 0 0 -14.9996,-14.99961 15,15 0 0 0 -15.00012,14.99961 z"  />  </g>',
 ]
+var TILES_ACTIVE = [];
 
-function piece(item){
+function piece(item, text){
 	var scale = 4 * Math.pow(2, 1 - item.depth),
 		x = item.x0 * text.width;
 		y = item.y0 * text.width;
 
-	var p = TILES.random();
+	var p = TILES_ACTIVE.random();
 	if ( item.depth % 2 == 1 ){
 		p = p.replace(/#ffffff/g, 'color2').replace(/#000000/g, 'color1').replace(/color2/g, text.color2).replace(/color1/g, text.color1);
 	}else {
@@ -91,7 +92,7 @@ class QuadTree {
 
 	random_divide(min_kids){
 		while(true) {
-			var kids = self.all_children(false);
+			var kids = this.all_children(false);
 			if(kids.length > min_kids){
 				break;
 			}
@@ -154,6 +155,28 @@ var sampleText = function() {
 	this.color2 = "#3333ff";
 	this.seed = 0;
 	this.debug = false;
+
+	this.randomDivide = function() {
+		var k = q.all_children(false).length;
+		q.random_divide(k + 10)
+		render()
+	}
+
+	this.piece0 = true;
+	this.piece1 = true;
+	this.piece2 = false;
+	this.piece3 = false;
+	this.piece4 = false;
+	this.piece5 = false;
+	this.piece6 = false;
+	this.piece7 = false;
+	this.piece8 = false;
+	this.piece9 = false;
+	this.piece10 = false;
+	this.piece11 = false;
+	this.piece12 = false;
+	this.piece13 = false;
+	this.piece14 = false;
 };
 
 
@@ -167,6 +190,23 @@ gui.addColor(text, 'color1').onChange(render);
 gui.addColor(text, 'color2').onChange(render);
 gui.add(text, 'seed', 1, 200).onChange(render);
 gui.add(text, 'debug').onChange(render);
+gui.add(text, 'randomDivide').onChange(render);
+gui.add(text, 'piece0').onChange(render);
+gui.add(text, 'piece1').onChange(render);
+gui.add(text, 'piece2').onChange(render);
+gui.add(text, 'piece3').onChange(render);
+gui.add(text, 'piece4').onChange(render);
+gui.add(text, 'piece5').onChange(render);
+gui.add(text, 'piece6').onChange(render);
+gui.add(text, 'piece7').onChange(render);
+gui.add(text, 'piece8').onChange(render);
+gui.add(text, 'piece9').onChange(render);
+gui.add(text, 'piece10').onChange(render);
+gui.add(text, 'piece11').onChange(render);
+gui.add(text, 'piece12').onChange(render);
+gui.add(text, 'piece13').onChange(render);
+gui.add(text, 'piece14').onChange(render);
+
 //gui.add(text, 'width', 0, 1000).onChange(render);
 //gui.add(text, 'divisions', 1, 20).onChange(render);
 
@@ -201,6 +241,17 @@ function render() {
 	svg.innerHTML = ""
 
 
+	TILES_ACTIVE = [];
+	for(var i = 0; i < TILES.length; i++){
+		if(text['piece' + i]){
+			TILES_ACTIVE.push(TILES[i])
+		}
+	}
+
+	if(TILES_ACTIVE.length == 0){
+		TILES_ACTIVE = TILES;
+	}
+
 
 	var kids = q.all_children(false);
 
@@ -218,7 +269,7 @@ function render() {
 			y = item.y0 * text.width,
 			c = getRandomColor();
 
-		svg.innerHTML += piece(item);
+		svg.innerHTML += piece(item, text);
 	})
 	kids.forEach(function(item, index){
 		randomSetSeed(hashCode(text.seed + item.id()));
