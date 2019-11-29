@@ -1,3 +1,6 @@
+// Author: Helena Rasche (@erasche)
+// License: AGPLv3
+//
 // Adapt to viewport
 var width = $('article.post').width();
 var svg = document.getElementById('plot');
