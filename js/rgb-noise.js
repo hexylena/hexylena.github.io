@@ -1,4 +1,4 @@
-// Author: Helena Rasche (@erasche)
+// Author: Helena Rasche (@hexylena)
 // License: AGPLv3
 var width = $('article.post').width();
 var svg = document.getElementById('plot');
