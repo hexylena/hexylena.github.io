@@ -22,20 +22,6 @@ $content-width:    800px !default;
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
 
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #444;
-    color: #e4e4e4;
-  }
-  a {
-    color: #e39777;
-  }
-  img {
-    filter: grayscale(30%);
-  }
-}
-
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
@@ -52,3 +38,48 @@ $on-laptop:        800px !default;
   "minima/layout",
   "minima/syntax"
 ;
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: $text-color;
+		color: $background-color;
+	}
+	.post-meta {
+		color: $background-color;
+	}
+	a {
+		color: #e39777;
+
+		&:hover {
+			color: $background-color;
+		}
+	}
+	img {
+		filter: grayscale(30%);
+	}
+
+	pre {
+		background-color: $text-color
+	}
+
+
+	.highlight table td { padding: 5px; }
+	.highlight table pre { margin: 0; }
+	.highlight, .highlight .w {
+	  color: #dbdbdb;
+	}
+
+
+	.highlight .c, .highlight .cd,
+	.highlight .cm, .highlight .c1, .highlight .cs,
+	.highlight .o, .highlight .ow,
+	.highlight .p, .highlight .pi {
+	  color: #ccc;
+	}
+
+	.highlight .gi {
+		color: #b08eff;
+	}
+
+}
+
