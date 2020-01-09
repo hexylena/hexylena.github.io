@@ -113,6 +113,29 @@ function render() {
 	         id="feGaussianBlur831" />
 		    </filter>
 
+  <filter
+     id="roughpaper"
+     x="0%"
+     y="0%"
+     width="100%"
+     height="100%">
+    <feTurbulence
+       type="fractalNoise"
+       baseFrequency="0.04"
+       result="noise"
+       numOctaves="5"
+       id="feTurbulence886" />
+    <feDiffuseLighting
+       in="noise"
+       lighting-color="white"
+       surfaceScale="10"
+       id="feDiffuseLighting890">
+      <feDistantLight
+         azimuth="45"
+         elevation="60"
+         id="feDistantLight888" />
+    </feDiffuseLighting>
+  </filter>
 
 	`;
 	randomSetSeed(text.seed);
@@ -134,6 +157,17 @@ function render() {
 			}
 		}
 	}
+
+	//svg.innerHTML += `  <rect
+		 //x="0"
+		 //y="0"
+		 //width="100%"
+		 //height="100%"
+		 //id="rect893"
+		 //filter="url(#roughpaper)"
+		 //fill="none"
+		 //style="opacity:0.05" />
+		//`
 }
 
 
