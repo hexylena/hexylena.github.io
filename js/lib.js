@@ -23,3 +23,28 @@ function getRandomColor() {
   }
   return color;
 }
+
+function Controls(attrs){
+	var self = this;
+	self._attrs = attrs;
+	Object.keys(attrs['range']).forEach(function(x){
+		// Set the attr
+		self[x] = attrs['range'][x][1];
+	})
+	Object.keys(attrs['color']).forEach(function(x){
+		// Set the attr
+		self[x] = attrs['color'][x];
+	})
+
+}
+function GUI(controls, fn){
+	var gui = new dat.GUI();
+
+	attrs = controls._attrs;
+	Object.keys(attrs['range']).forEach(function(x){
+		gui.add(controls, x, attrs['range'][x][0], attrs['range'][x][2]).step(1).onChange(fn)
+	})
+	Object.keys(attrs['color']).forEach(function(x){
+		gui.addColor(controls, x).onChange(fn)
+	})
+}

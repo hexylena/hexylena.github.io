@@ -3,43 +3,27 @@
 var width = $("article.post").width();
 var svg = document.getElementById("plot");
 
-var controlSettings = function() {
-	this.poffX= 0;
-	this.poffY= 45;
-	this.pR = 241;
-	this.rR = 10;
-	this.rings = 110;
-	this.skew = 48;
-	this.ringRotation = 180;
-
-	this.space = '#ffffff';
-	this.planet= '#000000';
-	this.ring = '#888888';
-
-	this.width = 60;
-	this.depth = 40;
-	this.seed = 0;
-};
-
-var controls = new controlSettings();
+var controls = new Controls({
+	range: {
+		poffX: [-200, 0, 1000],
+		poffY: [-200, 45, 1000],
+		pR: [0, 241, 800],
+		rR: [0, 10, 800],
+		rings: [0, 110, 500],
+		skew: [-80, 48, 80],
+		ringRotation: [-180, 180, 180],
+		width: [20, 60, 200],
+		depth: [20, 40, 200],
+		seed: [0, 0, 200],
+	},
+	color: {
+		space: '#ffffff',
+		planet: '#000000',
+		ring: '#888888',
+	}
+});
+var gui = GUI(controls, render);
 render();
-var gui = new dat.GUI();
-
-gui.add(controls, "poffX", -200, 1000).onChange(render);
-gui.add(controls, "poffY", -200, 1000).onChange(render);
-gui.add(controls, "pR", 0, 800).onChange(render);
-gui.add(controls, "rR", 0, 800).onChange(render);
-gui.add(controls, "rings", 0, 500).onChange(render);
-gui.add(controls, "skew", -80, 80).onChange(render);
-gui.add(controls, "ringRotation", -180, 180).onChange(render);
-
-gui.addColor(controls, 'space').onChange(render);
-gui.addColor(controls, 'planet').onChange(render);
-gui.addColor(controls, 'ring').onChange(render);
-
-gui.add(controls, "width", 20, 200).onChange(render);
-gui.add(controls, "depth", 20, 200).onChange(render);
-gui.add(controls, "seed", 1, 200).onChange(render);
 
 function render() {
 	svg.style.width = width + "px";
