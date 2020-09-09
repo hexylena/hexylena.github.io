@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
 <div class="home">
 	<a id="x" href="/assets/audio/0.wav">
