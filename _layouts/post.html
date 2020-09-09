@@ -66,6 +66,10 @@ layout: default
 			{% if req == "dat" %}
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js" integrity="sha256-HJ7j+71YYw6Kcs8THwQV9lXmPOcR0eXlg7n8KRTZsyA=" crossorigin="anonymous"></script>
 			{% endif %}
+
+			{% if req == "glsl" %}
+			<script type="text/javascript" src="https://unpkg.com/glsl-canvas-js/dist/umd/glsl-canvas.min.js"></script>
+			{% endif %}
 		{% endfor %}
 	{% endif %}
 
