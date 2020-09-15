@@ -110,5 +110,6 @@ if(d.getDate() == 13){
 }
 </script>
 
-
-The audio is noticeably better because I manually split the fragments and combined them with sox, rather than the awful javascript API for working with sound/time.
+<p class="text-muted">
+For those wondering: The audio is noticeably better because I manually split the fragments and combined them with sox, rather than the awful javascript API for working with sound/time.
+</p>
