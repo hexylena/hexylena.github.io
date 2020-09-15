@@ -1,6 +1,6 @@
 ---
 layout: post
-Tags:
+tags:
 - gamedev
 - mapgen
 date: 2017-12-03 22:33:49+00:00

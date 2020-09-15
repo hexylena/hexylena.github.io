@@ -46,6 +46,16 @@ layout: default
 				</td>
 			</tr>
 			{% endif %}
+			{% if page.tags %}
+			<tr>
+				<td>Tagged</td>
+				<td>
+					{% for tag in page.tags %}
+						<span class="tag">{{ tag }}</span>{% if forloop.last %}{% else %},{% endif %}
+					{% endfor %}
+				</td>
+			</tr>
+			{% endif %}
 		</table>
 	</header>
 

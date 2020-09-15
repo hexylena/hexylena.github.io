@@ -1,6 +1,6 @@
 ---
 layout: post
-Tags:
+tags:
 - dev
 - mapgen
 date: 2017-01-22T01:29:05Z

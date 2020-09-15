@@ -1,8 +1,9 @@
 ---
 layout: post
 author: Helena
-Tags:
+tags:
 - puzzles
+- gigglepig
 title: Number Station
 page_requires:
 - jquery

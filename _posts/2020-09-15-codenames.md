@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Helena
-Tags:
+tags:
 - dev
 title: Codenames Duet Card Generator
 page_requires:
