@@ -73,8 +73,8 @@ function render(hash, opponent){
 		document.getElementById(`${y}.${x}`).style.backgroundColor = mapping[v][opponent ? 1 : 0];
 
 		//Debugging
-		document.getElementById(`${y}.${x}`).style.color = 'grey';
-		document.getElementById(`${y}.${x}`).textContent = v;
+		//document.getElementById(`${y}.${x}`).style.color = 'grey';
+		//document.getElementById(`${y}.${x}`).textContent = v;
 	})
 
 	if(opponent){

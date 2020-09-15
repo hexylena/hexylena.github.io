@@ -78,3 +78,7 @@ page_requires:
 <script src="/js/lib.js"></script>
 <script src="/js/codenames.js"></script>
 See [/js/codenames.js](/js/codenames.js) for the source.
+
+# About
+
+I love codenames! But I don't always carry the codenames cards around and sometimes I just have some paper/a pen, and a phone, and I still want to play with friends. Or I have the word cards from another codenames deck, but not duet, and I just want to play duet. This will generate random codenames cards for play.
