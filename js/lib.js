@@ -2,6 +2,13 @@ function randomSetSeed(s) {
 	seed = s;
 }
 
+function shuffle(array) {
+	for (i = array.length - 1; i > 0; i--) {
+		j = Math.floor(random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+}
+
 function random() {
 	var x = Math.sin(seed++) * 10000;
 	return x - Math.floor(x);

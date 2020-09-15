@@ -52,23 +52,23 @@ layout: default
 	{% if page.page_requires %}
 		{% for req in page.page_requires %}
 			{% if req == "d3" %}
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js" integrity="sha256-4mL8TQfOJSbg0f42dQw5cKLl2ngQXUSXqfQnvK11M44=" crossorigin="anonymous"></script>
+			<script src="/assets/lib/d3.min.js" integrity="sha256-4mL8TQfOJSbg0f42dQw5cKLl2ngQXUSXqfQnvK11M44=" crossorigin="anonymous"></script>
 			{% endif %}
 
 			{% if req == "d3v4.12" %}
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.12.0/d3.min.js" integrity="sha256-TNlrZgMxbQoeCKCYUdhsLLuLZA77jcLU/3H8BZRM/3k=" crossorigin="anonymous"></script>
+			<script src="/assets/lib/d3.min.js" integrity="sha256-TNlrZgMxbQoeCKCYUdhsLLuLZA77jcLU/3H8BZRM/3k=" crossorigin="anonymous"></script>
 			{% endif %}
 
 			{% if req == "jquery" %}
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+			<script src="/assets/lib/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 			{% endif %}
 
 			{% if req == "dat" %}
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js" integrity="sha256-HJ7j+71YYw6Kcs8THwQV9lXmPOcR0eXlg7n8KRTZsyA=" crossorigin="anonymous"></script>
+			<script src="/assets/lib/dat.gui.min.js" integrity="sha256-HJ7j+71YYw6Kcs8THwQV9lXmPOcR0eXlg7n8KRTZsyA=" crossorigin="anonymous"></script>
 			{% endif %}
 
 			{% if req == "glsl" %}
-			<script type="text/javascript" src="https://unpkg.com/glsl-canvas-js/dist/umd/glsl-canvas.min.js"></script>
+			<script type="text/javascript" src="/assets/lib/glsl-canvas.min.js"></script>
 			{% endif %}
 		{% endfor %}
 	{% endif %}
