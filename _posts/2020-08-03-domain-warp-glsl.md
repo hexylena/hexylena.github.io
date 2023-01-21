@@ -9,6 +9,7 @@ page_requires:
 - jquery
 - dat
 - glsl
+blurb: Learning to use GLSL for domain warping
 ---
 
 <canvas class="glsl-canvas" data-fragment-url="/assets/fragment.glsl" width="900" height="900"></canvas>

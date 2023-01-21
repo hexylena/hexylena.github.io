@@ -3,9 +3,10 @@ layout: post
 tags:
 - gamedev
 - mapgen
+- wip
 date: 2017-01-25T02:07:15Z
 title: Dungeon Generation
-
+blurb: Dungeon generation based on a blog post, non-working.
 ---
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js" integrity="sha256-4mL8TQfOJSbg0f42dQw5cKLl2ngQXUSXqfQnvK11M44=" crossorigin="anonymous"></script>

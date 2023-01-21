@@ -8,6 +8,9 @@ title: Domain Warping
 page_requires:
 - jquery
 - dat
+blurb: Another version of domain warping
+see_also:
+- href: /js/timewarp.js
 ---
 
 <svg id="plot" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"/>
@@ -23,4 +26,3 @@ bindDownloadButton("download", "plot");
 <script src="/js/perlin.js"></script>
 <script src="/js/lib.js"></script>
 <script src="/js/timewarp.js"></script>
-See [/js/timewarp.js](/js/timewarp.js) for the source.

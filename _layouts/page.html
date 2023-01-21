@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/assets/style.css" type="text/css" media="all"/>
+  <title>{{ site.title }}(7)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle"><a href="/">{{ site.title }}(7)</a></td>
+    <td class="head-vol">Miscellaneous Information Manual</td>
+    <td class="head-rtitle">{{ site.title }}(7)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p>{{ page.title }}</p>
+</section>
+
+{% if page.synopsis or page.synopsis_list or page.tags or page.date %}
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p>
+{{ page.blurb }}
+</p>
+<table class="Nm">
+  {% if page.date %}
+  <tr>
+    <td><code class="Nm">Date</code></td>
+    <td><span datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{- page.date -}}</span></td>
+  </tr>
+  {% endif %}
+  {% if page.repo %}
+  <tr>
+    <td><code class="Nm">Repo</code></td>
+    <td><a class="Mt" href="{{ page.repo }}">{{ page.repo }}</a></td>
+  </tr>
+  {% endif %}
+  {% if page.commit %}
+  <tr>
+    <td><code class="Nm">Post as of</code></td>
+    <td><a class="Mt" href="https://github.com/{{ page.repo }}/tree/{{ page.commit }}">github.com/{{ page.repo }}@{{ page.commit | truncate: 20, "" }}</a></td>
+  </tr>
+  {% endif %}
+  {% if page.author %}
+  <tr>
+    <td><code class="Nm">Author</code></td>
+    <td><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span></td>
+  </tr>
+  {% endif %}
+  {% if page.tags %}
+  <tr>
+    <td><code class="Nm">Tags</code></td>
+    <td>{% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% if forloop.last %}{% else %},{% endif %}{% endfor %}</td>
+  </tr>
+  {% endif %}
+{% for x in page.synopsis_list %}
+  <tr>
+    <td><code class="Nm">{{ x.type }}</code></td>
+    <td><a class="Mt" href="{{ x.href }}">{{ x.text }}</a></td>
+  </tr>
+{% endfor %}
+</table>
+</section>
+{% endif %}
+
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<article class="post">
+{{ content }}
+</article>
+</section>
+
+{% if page.see_also %}
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE ALSO</a></h1>
+{% for link in page.see_also %}
+<p><a class="Lk" href="{{ link.href }}">{{ link.text | default: link.href }}</a></p>
+{% endfor %}
+</section>
+{% endif %}
+
+</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">{{ page.date }}</td>
+    <td class="foot-os">Galaxians Group</td>
+  </tr>
+</table>
+</body>
+</html>

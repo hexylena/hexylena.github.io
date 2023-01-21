@@ -6,6 +6,9 @@ tags:
 title: Codenames Duet Card Generator
 page_requires:
 - jquery
+blurb: Generate random but functional Codenames Duet cards that you and a partner can use remotely, based on a shared seed.
+see_also:
+- href: /js/codenames.js
 ---
 
 <style type="text/css">
@@ -77,7 +80,6 @@ page_requires:
 
 <script src="/js/lib.js"></script>
 <script src="/js/codenames.js"></script>
-See [/js/codenames.js](/js/codenames.js) for the source.
 
 # About
 

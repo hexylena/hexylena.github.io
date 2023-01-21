@@ -7,6 +7,7 @@ date: 2017-10-15 19:30:03+00:00
 title: REmapper Update 1
 repo: hexylena/remapper
 commit: "03d366b32bd1344c83d684a9c2f3baa860c27a67"
+blurb: Remapper update fixing unbounded execution and adding {2,4}-way mirroring
 ---
 
 Quick `remapper` update:

@@ -2,7 +2,7 @@
 // License: AGPLv3
 //
 // Adapt to viewport
-var width = $('article.post').width();
+var width = 720;//$('article.post').width();
 var svg = document.getElementById('plot');
 
 hashCode = function(s){

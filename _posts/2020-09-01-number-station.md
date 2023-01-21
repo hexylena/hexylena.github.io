@@ -7,6 +7,13 @@ tags:
 title: Number Station
 page_requires:
 - jquery
+blurb: A javascript Numbers Station based on the audio file extracted from a Gerät 23620, used in real number stations.
+see_also:
+- href: /assets/audio/2620_ger.wav
+  text: 2620_ger.wav
+- href: /assets/audio/2620_span.wav
+  text: 2620_span.wav
+- href: https://blog.ardy.io/2020/8/geraet-32620/
 ---
 
 

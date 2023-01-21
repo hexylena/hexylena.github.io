@@ -9,6 +9,7 @@ repo: hexylena/remapper
 page_requires:
 - d3v4.12
 - jquery
+blurb: Ideas for future research and work. Classic procgen blogpost where she wants to reinvent the world from first principles and wants everyone to think that was a good idea.
 ---
 
 * TOC

@@ -1,6 +1,6 @@
 ---
 layout: post
-Description: Converted the thread tone repo to work with circos.
+blurb: Converted the thread tone repo to work with circos.
 tags:
 - dev
 - personal

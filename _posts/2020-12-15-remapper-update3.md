@@ -6,6 +6,7 @@ tags:
 date: di 15 dec 2020 15:32:51 CET
 title: REmapper Update 3
 repo: hexylena/remapper
+blurb: Snippets from discussions with a colleague over remapper planning
 ---
 
 No actual update, just

@@ -7,6 +7,7 @@ date: 2017-12-03 15:20:56+00:00
 title: REmapper Update 2
 repo: hexylena/remapper
 commit: "c87e6a3c853e3ca58dcd40a84894c19494b9cd66"
+blurb: Another update adding CTF modes with flags and bases and some wip around flavouring
 ---
 
 - CTF mode implemented, flags / bases.

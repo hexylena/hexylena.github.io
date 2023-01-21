@@ -1,90 +1,31 @@
 ---
-layout: default
+layout: page
 ---
 <script src="/js/deeplink.js"></script>
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+{% if page.page_requires %}
+	{% for req in page.page_requires %}
+		{% if req == "d3" %}
+		<script src="/assets/lib/d3.min.js" integrity="sha256-4mL8TQfOJSbg0f42dQw5cKLl2ngQXUSXqfQnvK11M44=" crossorigin="anonymous"></script>
+		{% endif %}
 
-	<header class="post-header">
-		<h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+		{% if req == "d3v4.12" %}
+		<script src="/assets/lib/d3.min.js" integrity="sha256-TNlrZgMxbQoeCKCYUdhsLLuLZA77jcLU/3H8BZRM/3k=" crossorigin="anonymous"></script>
+		{% endif %}
 
-		<table class="post-meta">
-			<tr>
-				<td>Date</td>
-				<td>
-					<span datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-					{%- assign date_format = site.minima.date_format | default: "%Y-%m-%dT%H:%M" -%}
-					{{- page.date | date: date_format -}}
-					</span>
-				</td>
-			</tr>
-			{% if page.repo %}
-			<tr>
-				<td>Project</td>
-				<td>
-					<a href="https://github.com/{{ page.repo }}">
-						github.com/{{ page.repo }}
-					</a>
-				</td>
-			</tr>
-			{% endif %}
-			{% if page.commit %}
-			<tr>
-				<td>Post as of</td>
-				<td>
-					<a href="https://github.com/{{ page.repo }}/tree/{{ page.commit }}">
-						github.com/{{ page.repo }}@{{ page.commit | truncate: 20, "" }}
-					</a>
-				</td>
-			</tr>
-			{% endif %}
-			{% if page.author %}
-			<tr>
-				<td>Author</td>
-				<td>
-					<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-				</td>
-			</tr>
-			{% endif %}
-			{% if page.tags %}
-			<tr>
-				<td>Tagged</td>
-				<td>
-					{% for tag in page.tags %}
-						<span class="tag">{{ tag }}</span>{% if forloop.last %}{% else %},{% endif %}
-					{% endfor %}
-				</td>
-			</tr>
-			{% endif %}
-		</table>
-	</header>
+		{% if req == "jquery" %}
+		<script src="/assets/lib/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		{% endif %}
 
-	{% if page.page_requires %}
-		{% for req in page.page_requires %}
-			{% if req == "d3" %}
-			<script src="/assets/lib/d3.min.js" integrity="sha256-4mL8TQfOJSbg0f42dQw5cKLl2ngQXUSXqfQnvK11M44=" crossorigin="anonymous"></script>
-			{% endif %}
+		{% if req == "dat" %}
+		<script src="/assets/lib/dat.gui.min.js" integrity="sha256-HJ7j+71YYw6Kcs8THwQV9lXmPOcR0eXlg7n8KRTZsyA=" crossorigin="anonymous"></script>
+		{% endif %}
 
-			{% if req == "d3v4.12" %}
-			<script src="/assets/lib/d3.min.js" integrity="sha256-TNlrZgMxbQoeCKCYUdhsLLuLZA77jcLU/3H8BZRM/3k=" crossorigin="anonymous"></script>
-			{% endif %}
-
-			{% if req == "jquery" %}
-			<script src="/assets/lib/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-			{% endif %}
-
-			{% if req == "dat" %}
-			<script src="/assets/lib/dat.gui.min.js" integrity="sha256-HJ7j+71YYw6Kcs8THwQV9lXmPOcR0eXlg7n8KRTZsyA=" crossorigin="anonymous"></script>
-			{% endif %}
-
-			{% if req == "glsl" %}
-			<script type="text/javascript" src="/assets/lib/glsl-canvas.min.js"></script>
-			{% endif %}
-		{% endfor %}
-	{% endif %}
+		{% if req == "glsl" %}
+		<script type="text/javascript" src="/assets/lib/glsl-canvas.min.js"></script>
+		{% endif %}
+	{% endfor %}
+{% endif %}
 
 
-	<div class="post-content" itemprop="articleBody">
-		{{ content }}
-	</div>
-</article>
+{{ content }}

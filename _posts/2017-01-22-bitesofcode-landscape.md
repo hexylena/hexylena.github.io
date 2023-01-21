@@ -5,9 +5,13 @@ tags:
 - mapgen
 date: 2017-01-22T01:29:05Z
 title: Bitesofcode's Terrain Generation
+blurb: Pretty landscapes based on a random wordpress blogpost
 page_requires:
 - d3
 - jquery
+see_also:
+- href: /js/bitesofcode.js
+  text: /js/bitesofcode.js
 ---
 
 Found [this](https://bitesofcode.wordpress.com/2016/12/23/landscape-generation-using-midpoint-displacement/) blog post and enjoyed the graphics. Re-implementing in JS for a learning exercise.
@@ -25,4 +29,3 @@ I started this post with the idea of doing fancy controls but... meh. No time fo
 </div>
 
 <script src="/js/bitesofcode.js"></script>
-See [/js/bitesofcode.js](/js/bitesofcode.js) for the source.
