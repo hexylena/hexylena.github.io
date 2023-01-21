@@ -17,7 +17,7 @@
 <div class="manual-text">
 <section class="Sh">
 <h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<p>{{ page.title }}</p>
+<p>{{ page.title | markdownify }}</p>
 </section>
 
 {% if page.synopsis or page.synopsis_list or page.tags or page.date %}
