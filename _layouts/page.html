@@ -12,18 +12,15 @@ div.Nd, div.Bf, div.Op { display: inline; }
 dl.Bl-diag > dt { font-weight: bold; }
 code.Nm, code.Fl, code.Cm, code.Ic, code.In, code.Fd, code.Fn,
 code.Cd { font-weight: bold; font-family: inherit; }
-
 html { font-family: monospace; line-height: 1.25em; }
 body { max-width: 80ch; margin: 1em auto; padding: 0 1ch; }
 table { border-collapse: collapse; }
 table.Nm code.Nm { padding-right: 1ch; }
 table.foot { margin-top: 1em; }
-
 html { background-color: #CE3518; color: white; }
 a { color: black; }
 a.permalink { color: white; text-decoration: none; }
   </style>
-
   <title>{{ site.title }}(7)</title>
 </head>
 <body>
@@ -39,7 +36,6 @@ a.permalink { color: white; text-decoration: none; }
 <h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
 <p>{{ page.title | markdownify }}</p>
 </section>
-
 {% if page.synopsis or page.synopsis_list or page.tags or page.date %}
 <section class="Sh">
 <h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
@@ -86,14 +82,12 @@ a.permalink { color: white; text-decoration: none; }
 </table>
 </section>
 {% endif %}
-
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
 <article class="post">
 {{ content }}
 </article>
 </section>
-
 {% if page.see_also %}
 <section class="Sh">
 <h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE ALSO</a></h1>
@@ -102,7 +96,6 @@ a.permalink { color: white; text-decoration: none; }
 {% endfor %}
 </section>
 {% endif %}
-
 </div>
 <table class="foot">
   <tr>
