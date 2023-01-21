@@ -78,7 +78,7 @@
 <section class="Sh">
 <h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE ALSO</a></h1>
 {% for link in page.see_also %}
-<p><a class="Lk" href="{{ link.href }}">{{ link.text | default: link.href }}</a></p>
+<p><a class="Lk" {% if link.rel %}rel="{{ link.rel }}"{% endif %} href="{{ link.href }}">{{ link.text | default: link.href }}</a></p>
 {% endfor %}
 </section>
 {% endif %}
