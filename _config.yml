@@ -10,3 +10,5 @@ github_username: hexylena
 markdown: kramdown
 plugins:
   - jekyll-feed
+
+include: [".well-known"]
