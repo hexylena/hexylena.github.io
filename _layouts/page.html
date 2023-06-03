@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -25,6 +25,7 @@ a.permalink { color: white; text-decoration: none; }
   <title>{{ site.title }}(7)</title>
 </head>
 <body>
+<nav>
 <table class="head">
   <tr>
     <td class="head-ltitle"><a href="/">{{ site.title }}(7)</a></td>
@@ -32,14 +33,17 @@ a.permalink { color: white; text-decoration: none; }
     <td class="head-rtitle">{{ site.title }}(7)</td>
   </tr>
 </table>
+</nav>
+
+<main>
 <div class="manual-text">
 <section class="Sh">
-<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<h1 class="Sh" id="NAME" aria-label="{{ page.title }}"><a class="permalink" href="#NAME">NAME</a></h1>
 <p>{{ page.title | markdownify }}</p>
 </section>
 {% if page.synopsis or page.synopsis_list or page.tags or page.date %}
 <section class="Sh">
-<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<h2 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h2>
 <p>
 {{ page.blurb }}
 </p>
@@ -84,25 +88,30 @@ a.permalink { color: white; text-decoration: none; }
 </section>
 {% endif %}
 <section class="Sh">
-<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<h2 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h2>
 <article class="post">
 {{ content }}
 </article>
 </section>
 {% if page.see_also %}
 <section class="Sh">
-<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE ALSO</a></h1>
+<h2 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE ALSO</a></h2>
 {% for link in page.see_also %}
 <p><a class="Lk" {% if link.rel %}rel="{{ link.rel }}"{% endif %} href="{{ link.href }}">{{ link.text | default: link.href }}</a></p>
 {% endfor %}
 </section>
 {% endif %}
 </div>
+</main>
+
+<footer>
 <table class="foot">
   <tr>
     <td class="foot-date">{{ page.date }}</td>
     <td class="foot-os">Galaxians Group</td>
   </tr>
 </table>
+</footer>
+
 </body>
 </html>
