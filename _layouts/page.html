@@ -39,7 +39,7 @@ a.permalink { color: white; text-decoration: none; }
 <div class="manual-text">
 <section class="Sh">
 <h1 class="Sh" id="NAME" aria-label="{{ page.title }}"><a class="permalink" href="#NAME">NAME</a></h1>
-<p>{{ page.title | markdownify }}</p>
+<p>{{ page.description | markdownify }}</p>
 </section>
 {% if page.synopsis or page.synopsis_list or page.tags or page.date %}
 <section class="Sh">
