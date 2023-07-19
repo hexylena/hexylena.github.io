@@ -42,7 +42,7 @@ a.permalink { color: white; text-decoration: none; }
 
 <p>{{ page.title | markdownify }}</p>
 </section>
-{% if page.synopsis or page.synopsis_list or page.tags or page.date %}
+{% if page.blurb or page.synopsis_list or page.tags or page.date %}
 <section class="Sh">
 <h2 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h2>
 <p>
