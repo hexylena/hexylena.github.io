@@ -22,7 +22,7 @@ see_also:
 <input type="text" name="vowels" id="vowels"  value="aeiouäëïöü" />
 
 <label for="pattern">pattern</label>
-<input type="text" name="pattern" id="pattern"  value="cvvcvcv" />
+<input type="text" name="pattern" id="pattern"  value="cvvcvc" />
 
 <label for="count">count</label>
 <input type="number" name="count" id="count" min="1" max="1000" value="10" />
