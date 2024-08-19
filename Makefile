@@ -1,14 +1,12 @@
 SHELL:=/bin/bash
 
-def:
-	bundle exec jekyll serve -P 4001 -H 0.0.0.0 --incremental
+all: $(ALL_ROFFS)
 
 serve:
-	source ~/.rvm/scripts/rvm && \
-	rvm use 2.5.1@personal && \
-	jekyll serve -P 4001
+	bundle exec jekyll serve -H 0.0.0.0 --incremental
 
-incremental:
-	source ~/.rvm/scripts/rvm && \
-	rvm use 2.5.1@personal && \
-	jekyll serve --incremental -P 4001
+ALL_POSTS := $(wildcard _posts/*.md)
+ALL_ROFFS := $(ALL_POSTS:md=roff)
+
+_posts/%.roff: _posts/%.md
+	pandoc -M section=7 -s -t man < $< > $@
