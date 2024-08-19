@@ -5,24 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/x-icon" href="{% link assets/favicon.png %}">
   <style type="text/css">
-table { width: 100%; }
+:root {
+	--theme-color: #CE3518;
+	--text-color: white;
+	--link-color: black;
+	--code-background: black;
+	--code-foreground: white;
+	--font-family: "Iosevka Term Slab Extended";
+}
+a { color: var(--link-color); }
+a.permalink { text-decoration: none; }
+html { background-color: var(--theme-color); color: var(--text-color); line-height: 1.25em; font-family: var(--font-family, monospace); font-display: swap; }
+body { max-width: 80ch; margin: 1em auto; padding: 0 1ch; }
+table { width: 100%; border-collapse: collapse; }
+table.foot { margin-top: 1em; }
 td.head-rtitle, td.foot-os { text-align: right; }
 td.head-vol { text-align: center; }
-p,div.Pp { margin: 1ex 0ex; }
-div.Nd, div.Bf, div.Op { display: inline; }
-dl.Bl-diag > dt { font-weight: bold; }
-code.Nm, code.Fl, code.Cm, code.Ic, code.In, code.Fd, code.Fn,
-code.Cd { font-weight: bold; font-family: inherit; }
-html { font-family: monospace; line-height: 1.25em; }
-body { max-width: 80ch; margin: 1em auto; padding: 0 1ch; }
-table { border-collapse: collapse; }
-table.Nm code.Nm { padding-right: 1ch; }
-table.foot { margin-top: 1em; }
-html { background-color: #CE3518; color: white; }
-a { color: black; }
-a.permalink { color: white; text-decoration: none; }
+p { margin: 1em 0ex; }
+pre, :not(pre) > code { background-color: var(--code-background); color: var(--code-foreground); white-space: pre-wrap; word-wrap: break-word; padding: 0.1em;}
+pre{padding: 0.8em 0.1em;}
+h1,h2,h3 {text-transform: uppercase;}
+img{max-width: 95%;}
   </style>
   <title>{{ site.title }}(7)</title>
+  <meta name="author" content="{{ page.author | default: "hexylena" }}" />
+  <meta name="dcterms.date" content="{{ page.date }}" />
+
 </head>
 <body>
 <nav>
@@ -113,6 +121,13 @@ a.permalink { color: white; text-decoration: none; }
   </tr>
 </table>
 </footer>
+
+    {% if page.layout == "post" %}
+<hr/>
+
+<p>Also viewable via <code>curl {{ site.url }}{{ site.baseurl }}{{ page.url | replace:'.html','.roff'}} | man -l -</code></p>
+{% endif %}
+
 
 </body>
 </html>

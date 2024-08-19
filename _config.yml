@@ -1,4 +1,4 @@
-title: hexylena
+title: hexylog
 author: Helena
 email: hexylena@galaxians.rog
 description: ""
@@ -12,3 +12,5 @@ plugins:
   - jekyll-feed
 
 include: [".well-known"]
+# exclude:
+#   - _posts/*.roff
