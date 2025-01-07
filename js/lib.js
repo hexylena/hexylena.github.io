@@ -12,6 +12,13 @@ function shuffle(array) {
 }
 
 function random() {
+	// If not set, use built in randomness
+	if (seed === undefined || seed === null) {
+		return Math.random();
+	}
+	if (seed === "CSPRNG") {
+		return window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) - 1);
+	}
 	var x = Math.sin(seed++) * 10000;
 	return x - Math.floor(x);
 }
@@ -20,8 +27,19 @@ Array.prototype.random = function () {
 	return this[Math.floor((random()*this.length))];
 }
 
+Array.prototype.shuffle = function () {
+	for (let i = this.length - 1; i >= 0; i--) {
+		const j = Math.floor(random() * (i + 1));
+		[this[i], this[j]] = [this[j], this[i]];
+	}
+	return this;
+}
+
 hashCode = function(s){
-	  return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
+	if(s === undefined || s === null){
+		s = "";
+	}
+	return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
 }
 
 function getRandomColor() {
