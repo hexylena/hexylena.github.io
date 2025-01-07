@@ -236,8 +236,6 @@ function encrypt_text(sheet, first, second, text) {
 
 			encrypted += `<br/>${first} ${second} `;
 		}
-		console.log(toNato(first), toNato(second), sl, "enc", c);
-
 		// pick letter below
 		let choice = belowSorted(sheet, sl, c);
 		used.push(c);
