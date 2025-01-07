@@ -9,7 +9,7 @@ const encoding = {
 };
 
 const decoding = {
-	0: 'AEIAEEEEEEIAEIOUHWY',
+	0: 'AEIOUAEIOUAEIOUHWY',
 	1: 'BFPV',
 	2: 'CGJKQSXZ',
 	3: 'DT',
@@ -84,50 +84,4 @@ function reverseSoundex(opts){
 		return decoding[i].split('').random();
 	});
 	return arr.join('');
-}
-
-function reverseSoundexForm(opts) {
-	// cannot untruncate.
-	let results = [];
-	randomSetSeed(hashCode(opts.seed));
-	for (let i = 0; i < opts.count; i++) {
-		results.push(reverseSoundex(opts));
-	}
-	return results;
-};
-
-function soundexForm() {
-	let name = document.getElementById('name').value;
-	// Discard all non-letter characters from surname: dashes, spaces, apostrophes, and so on.
-	let arr = name.toUpperCase().replace(/[^A-Z]/g, '').split('');
-	document.getElementById('step1').innerText = arr.join('');
-	let first = arr[0];
-	arr = arr.map((letter) => {
-		return encoding[letter];
-	});
-	document.getElementById('step2').innerText = arr.join('');
-	let last = "";
-	arr = arr.map((letter) => {
-		if (letter !== last) {
-			last = letter;
-			return letter;
-		} else {
-			last = letter;
-			return null;
-		}
-	})
-	arr = arr.filter((letter) => {
-		return letter !== null;
-	});
-	document.getElementById('step3').innerText = arr.join('');
-	arr[0] = first;
-	document.getElementById('step4').innerText = arr.join('');
-	arr = arr.filter((letter) => {
-		return letter !== 0;
-	});
-	document.getElementById('step5').innerText = arr.join('');
-	arr = arr.slice(0, 4).join('').padEnd(4, '0');
-	document.getElementById('step6').innerText = arr;
-	document.getElementById('pattern').value = arr;
-	//randomizeSoundex();
 }
