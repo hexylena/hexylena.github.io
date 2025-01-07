@@ -226,6 +226,9 @@ function encrypt_text(sheet, first, second, text) {
 		if (c === "L") {
 			c = "I";
 		}
+		if (c === "O") {
+			c = "Q";
+		}
 		if (used.includes(c) || used.length >= 15) {
 			used = [];
 			[first, second, sl] = generateSetLetter(sheet, sl);
