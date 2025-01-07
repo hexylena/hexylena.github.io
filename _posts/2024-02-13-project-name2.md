@@ -43,7 +43,3 @@ It's not a perfect implementation, but, eh, I don't really care that much for th
 
 <script src="/js/lib.js"></script>
 <script src="/js/project-name-soundex.js"></script>
-
-
-
-

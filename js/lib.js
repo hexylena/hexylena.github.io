@@ -1,3 +1,5 @@
+let seed;
+
 function randomSetSeed(s) {
 	seed = s;
 }
@@ -54,4 +56,27 @@ function GUI(controls, fn){
 	Object.keys(attrs['color']).forEach(function(x){
 		gui.addColor(controls, x).onChange(fn)
 	})
+}
+
+function formToOpts(id) {
+	let p = document.querySelector(id);
+	let opts = {};
+	for (let elem of p.querySelectorAll("input")) {
+		if (elem.type === "checkbox") {
+			opts[elem.name] = elem.checked;
+		} else {
+			opts[elem.name] = elem.value;
+		}
+	}
+	for (let elem of p.querySelectorAll("select")) {
+		opts[elem.name] = elem.value;
+	}
+	for (let elem of p.querySelectorAll("textarea")) {
+		opts[elem.name] = elem.value;
+	}
+	return opts
+}
+
+Array.prototype.flatten = function() {
+	return this.reduce((acc, val) => acc.concat(val), []);
 }
