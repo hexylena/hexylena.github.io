@@ -131,16 +131,15 @@ function generateSetLetter(sheet, avoid) {
 	}
 };
 
-function encrypt_num(sheet, first, second) {
+function encrypt_num(sheet, first, second, plaintext) {
     let [_a, _b, sl] = obtainSetLetter(sheet, first, second)
 
     // numeric encryption
-    let plain = document.getElementById("plaintext_num").value;
     let encrypted = "";
 
     let set_row = sheet[sl];
     let used = [];
-    plain.split('').map(x => parseInt(x)).forEach((digit) => {
+    plaintext.split('').map(x => parseInt(x)).forEach((digit) => {
         // pick a letter from the set row with that number.
         let choices = set_row[digit].slice();
 
@@ -175,16 +174,16 @@ function encrypt_num(sheet, first, second) {
     ];
 }
 
-function encrypt_text(sheet, first, second) {
+function encrypt_text(sheet, first, second, text) {
     let [_a, _b, sl] = obtainSetLetter(sheet, first, second)
 
     // numeric encryption
-    let plain = document.getElementById("plaintext_txt").value;
     let encrypted = "";
 
     let set_row = sheet[sl];
     let used = [];
-    plain.split('').forEach((c) => {
+    text.split('').forEach((c) => {
+	if(c === 'L') { c = 'I'; }
 	if(used.includes(c) || used.length >= 15){
 		used = [];
 		[first, second, sl] = generateSetLetter(sheet, sl);
