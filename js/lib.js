@@ -1,3 +1,10 @@
+HTMLCollection.prototype.forEach = Array.prototype.forEach;
+NodeList.prototype.forEach = Array.prototype.forEach;
+HTMLCollection.prototype.filter = Array.prototype.filter;
+NodeList.prototype.filter = Array.prototype.filter;
+HTMLCollection.prototype.map = Array.prototype.map;
+NodeList.prototype.map = Array.prototype.map;
+
 let seed;
 
 function randomSetSeed(s) {
