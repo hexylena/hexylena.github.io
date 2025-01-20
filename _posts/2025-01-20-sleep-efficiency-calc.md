@@ -4,7 +4,7 @@ author: Helena
 tags:
 - dev
 title: "Simple Sleep Efficiency Calculator"
-blurb: Math with hours is hard
+blurb: Math with hours is hard and girls¹ be eepy
 ---
 
 Trying to keep sleep efficiency above 90% for sanity reasons. I'm a fan of <abbr title="total sleep time">TST</abbr> as the denominator rather than <abbr title="time in bed">TIB</abbr> because yeah *obviously* people use phones in bed before sleep[^1].
