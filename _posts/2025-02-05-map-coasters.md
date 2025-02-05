@@ -53,3 +53,5 @@ mono ./Maperitive.Console.exe Scripts/Naarden.mscript
 ![an image of a star fort, the grass is in green, the water is black, and buildings come up to a light grey colour]({% link assets/naarden.png %})
 
 Personally I found the Maperitive GUI to be the best way to identify the correct boundaries, but ymmv.
+
+![a red coaster of brielle, a different city, shown.]({% link assets/coaster.jpg %})
